@@ -1,0 +1,621 @@
+region_country,parameter,mode,powertrain,year,unit,Aggregate group,Projection-CPS,Projection-STEPS,difference
+China,Average capacity per EV,EV,EV,2035,kW/EV,Projection_country,4.8,4.8,0.0
+China,Average capacity per EVSE,EV,EV,2035,kW/EVSE,Projection_country,71.0,71.0,0.0
+China,Battery deployment,2 and 3 wheelers,EV,2035,GWh,Projection_country,74.0,74.0,0.0
+China,Battery deployment,Buses,EV,2035,GWh,Projection_country,30.0,30.0,0.0
+China,Battery deployment,Cars,EV,2035,GWh,Projection_country,1600.0,1600.0,0.0
+China,Battery deployment,Trucks,EV,2035,GWh,Projection_country,340.0,340.0,0.0
+China,Battery deployment,Vans,EV,2035,GWh,Projection_country,49.0,49.0,0.0
+China,EV charging points,EVSE,Publicly available fast,2035,charging points,Projection_country,5400000.0,5400000.0,0.0
+China,EV charging points,EVSE,Publicly available slow,2035,charging points,Projection_country,9000000.0,9000000.0,0.0
+China,EV charging points,EVSE,Publicly available ultra-fast,2035,charging points,Projection_country,3700000.0,3700000.0,0.0
+China,EV sales,2 and 3 wheelers,BEV,2035,Vehicles,Projection_country,16000000.0,16000000.0,0.0
+China,EV sales,2 and 3 wheelers,EV,2035,Vehicles,Projection_country,16000000.0,16000000.0,0.0
+China,EV sales,Buses,BEV,2035,Vehicles,Projection_country,120000.0,120000.0,0.0
+China,EV sales,Buses,EV,2035,Vehicles,Projection_country,120000.0,120000.0,0.0
+China,EV sales,Buses,FCEV,2035,Vehicles,Projection_country,4500.0,4500.0,0.0
+China,EV sales,Buses,PHEV,2035,Vehicles,Projection_country,1900.0,1900.0,0.0
+China,EV sales,Cars,BEV,2035,Vehicles,Projection_country,20000000.0,20000000.0,0.0
+China,EV sales,Cars,EV,2035,Vehicles,Projection_country,26000000.0,26000000.0,0.0
+China,EV sales,Cars,PHEV,2035,Vehicles,Projection_country,5600000.0,5600000.0,0.0
+China,EV sales,Trucks,BEV,2035,Vehicles,Projection_country,900000.0,920000.0,20000.0
+China,EV sales,Trucks,EV,2035,Vehicles,Projection_country,910000.0,940000.0,30000.0
+China,EV sales,Trucks,FCEV,2035,Vehicles,Projection_country,54000.0,56000.0,2000.0
+China,EV sales,Trucks,PHEV,2035,Vehicles,Projection_country,18000.0,18000.0,0.0
+China,EV sales,Vans,BEV,2035,Vehicles,Projection_country,910000.0,910000.0,0.0
+China,EV sales,Vans,EV,2035,Vehicles,Projection_country,960000.0,960000.0,0.0
+China,EV sales,Vans,FCEV,2035,Vehicles,Projection_country,2300.0,2300.0,0.0
+China,EV sales,Vans,PHEV,2035,Vehicles,Projection_country,48000.0,48000.0,0.0
+China,EV sales share,2 and 3 wheelers,EV,2035,percent,Projection_country,94.0,94.0,0.0
+China,EV sales share,Buses,EV,2035,percent,Projection_country,82.0,82.0,0.0
+China,EV sales share,Cars,EV,2035,percent,Projection_country,94.0,94.0,0.0
+China,EV sales share,Trucks,EV,2035,percent,Projection_country,60.0,60.0,0.0
+China,EV sales share,Vans,EV,2035,percent,Projection_country,73.0,73.0,0.0
+China,EV stock,2 and 3 wheelers,BEV,2035,Vehicles,Projection_country,120000000.0,120000000.0,0.0
+China,EV stock,2 and 3 wheelers,EV,2035,Vehicles,Projection_country,120000000.0,120000000.0,0.0
+China,EV stock,Buses,BEV,2035,Vehicles,Projection_country,1600000.0,1600000.0,0.0
+China,EV stock,Buses,EV,2035,Vehicles,Projection_country,1700000.0,1700000.0,0.0
+China,EV stock,Buses,FCEV,2035,Vehicles,Projection_country,41000.0,41000.0,0.0
+China,EV stock,Buses,PHEV,2035,Vehicles,Projection_country,34000.0,34000.0,0.0
+China,EV stock,Cars,BEV,2035,Vehicles,Projection_country,180000000.0,180000000.0,0.0
+China,EV stock,Cars,EV,2035,Vehicles,Projection_country,260000000.0,260000000.0,0.0
+China,EV stock,Cars,FCEV,2035,Vehicles,Projection_country,750.0,750.0,0.0
+China,EV stock,Cars,PHEV,2035,Vehicles,Projection_country,75000000.0,75000000.0,0.0
+China,EV stock,Trucks,BEV,2035,Vehicles,Projection_country,7900000.0,7900000.0,0.0
+China,EV stock,Trucks,EV,2035,Vehicles,Projection_country,8100000.0,8100000.0,0.0
+China,EV stock,Trucks,FCEV,2035,Vehicles,Projection_country,300000.0,300000.0,0.0
+China,EV stock,Trucks,PHEV,2035,Vehicles,Projection_country,210000.0,210000.0,0.0
+China,EV stock,Vans,BEV,2035,Vehicles,Projection_country,6100000.0,6100000.0,0.0
+China,EV stock,Vans,EV,2035,Vehicles,Projection_country,6400000.0,6400000.0,0.0
+China,EV stock,Vans,FCEV,2035,Vehicles,Projection_country,10000.0,10000.0,0.0
+China,EV stock,Vans,PHEV,2035,Vehicles,Projection_country,320000.0,320000.0,0.0
+China,EV stock share,2 and 3 wheelers,EV,2035,percent,Projection_country,73.0,73.0,0.0
+China,EV stock share,Buses,EV,2035,percent,Projection_country,70.0,70.0,0.0
+China,EV stock share,Cars,EV,2035,percent,Projection_country,59.0,59.0,0.0
+China,EV stock share,Trucks,EV,2035,percent,Projection_country,27.0,27.0,0.0
+China,EV stock share,Vans,EV,2035,percent,Projection_country,39.0,39.0,0.0
+China,Electric LDVs per charging point,EV,EV,2035,vehicles,Projection_country,15.0,15.0,0.0
+China,Electricity demand,2 and 3 wheelers,EV,2035,GWh,Projection_country,23000.0,23000.0,0.0
+China,Electricity demand,Buses,EV,2035,GWh,Projection_country,36000.0,36000.0,0.0
+China,Electricity demand,Cars,EV,2035,GWh,Projection_country,380000.0,370000.0,-10000.0
+China,Electricity demand,Trucks,EV,2035,GWh,Projection_country,330000.0,340000.0,10000.0
+China,Electricity demand,Vans,EV,2035,GWh,Projection_country,14000.0,14000.0,0.0
+China,Oil displacement Mlge,2 and 3 wheelers,EV,2035,Million litres gasoline equivalent,Projection_country,11000.0,11000.0,0.0
+China,Oil displacement Mlge,Buses,EV,2035,Million litres gasoline equivalent,Projection_country,11000.0,11000.0,0.0
+China,Oil displacement Mlge,Cars,EV,2035,Million litres gasoline equivalent,Projection_country,210000.0,200000.0,-10000.0
+China,Oil displacement Mlge,Trucks,EV,2035,Million litres gasoline equivalent,Projection_country,36000.0,37000.0,1000.0
+China,Oil displacement Mlge,Vans,EV,2035,Million litres gasoline equivalent,Projection_country,7200.0,7200.0,0.0
+China,"Oil displacement, Mbd",2 and 3 wheelers,EV,2035,Million barrels per day,Projection_country,0.19,0.19,0.0
+China,"Oil displacement, Mbd",Buses,EV,2035,Million barrels per day,Projection_country,0.18,0.18,0.0
+China,"Oil displacement, Mbd",Cars,EV,2035,Million barrels per day,Projection_country,3.5,3.4,-0.10000000000000009
+China,"Oil displacement, Mbd",Trucks,EV,2035,Million barrels per day,Projection_country,0.6,0.61,0.010000000000000009
+China,"Oil displacement, Mbd",Vans,EV,2035,Million barrels per day,Projection_country,0.12,0.12,0.0
+Europe,Average capacity per EV,EV,EV,2035,kW/EV,Projection_region,1.5,1.5,0.0
+Europe,Average capacity per EVSE,EV,EV,2035,kW/EVSE,Projection_region,46.0,47.0,1.0
+Europe,Battery deployment,2 and 3 wheelers,EV,2035,GWh,Projection_region,1.0,4.5,3.5
+Europe,Battery deployment,Buses,EV,2035,GWh,Projection_region,11.0,17.0,6.0
+Europe,Battery deployment,Cars,EV,2035,GWh,Projection_region,1100.0,1100.0,0.0
+Europe,Battery deployment,Trucks,EV,2035,GWh,Projection_region,86.0,88.0,2.0
+Europe,Battery deployment,Vans,EV,2035,GWh,Projection_region,90.0,84.0,-6.0
+Europe,EV charging points,EVSE,Publicly available fast,2035,charging points,Projection_region,640000.0,590000.0,-50000.0
+Europe,EV charging points,EVSE,Publicly available slow,2035,charging points,Projection_region,3200000.0,2900000.0,-300000.0
+Europe,EV charging points,EVSE,Publicly available ultra-fast,2035,charging points,Projection_region,530000.0,500000.0,-30000.0
+Europe,EV sales,2 and 3 wheelers,BEV,2035,Vehicles,Projection_region,220000.0,990000.0,770000.0
+Europe,EV sales,2 and 3 wheelers,EV,2035,Vehicles,Projection_region,220000.0,990000.0,770000.0
+Europe,EV sales,Buses,BEV,2035,Vehicles,Projection_region,37000.0,56000.0,19000.0
+Europe,EV sales,Buses,EV,2035,Vehicles,Projection_region,37000.0,56000.0,19000.0
+Europe,EV sales,Buses,FCEV,2035,Vehicles,Projection_region,1300.0,1400.0,100.0
+Europe,EV sales,Buses,PHEV,2035,Vehicles,Projection_region,240.0,340.0,100.0
+Europe,EV sales,Cars,BEV,2035,Vehicles,Projection_region,15000000.0,14000000.0,-1000000.0
+Europe,EV sales,Cars,EV,2035,Vehicles,Projection_region,15000000.0,14000000.0,-1000000.0
+Europe,EV sales,Cars,FCEV,2035,Vehicles,Projection_region,380.0,380.0,0.0
+Europe,EV sales,Cars,PHEV,2035,Vehicles,Projection_region,100000.0,590000.0,490000.0
+Europe,EV sales,Trucks,BEV,2035,Vehicles,Projection_region,190000.0,190000.0,0.0
+Europe,EV sales,Trucks,EV,2035,Vehicles,Projection_region,190000.0,200000.0,10000.0
+Europe,EV sales,Trucks,FCEV,2035,Vehicles,Projection_region,11000.0,11000.0,0.0
+Europe,EV sales,Trucks,PHEV,2035,Vehicles,Projection_region,4800.0,7600.0,2800.0
+Europe,EV sales,Vans,BEV,2035,Vehicles,Projection_region,1700000.0,1600000.0,-100000.0
+Europe,EV sales,Vans,EV,2035,Vehicles,Projection_region,1700000.0,1600000.0,-100000.0
+Europe,EV sales,Vans,FCEV,2035,Vehicles,Projection_region,12000.0,11000.0,-1000.0
+Europe,EV sales,Vans,PHEV,2035,Vehicles,Projection_region,1300.0,63000.0,61700.0
+Europe,EV sales share,2 and 3 wheelers,EV,2035,percent,Projection_region,10.0,47.0,37.0
+Europe,EV sales share,Buses,EV,2035,percent,Projection_region,40.0,61.0,21.0
+Europe,EV sales share,Cars,EV,2035,percent,Projection_region,89.0,85.0,-4.0
+Europe,EV sales share,Trucks,EV,2035,percent,Projection_region,35.0,36.0,1.0
+Europe,EV sales share,Vans,EV,2035,percent,Projection_region,85.0,81.0,-4.0
+Europe,EV stock,2 and 3 wheelers,BEV,2035,Vehicles,Projection_region,3600000.0,7100000.0,3500000.0
+Europe,EV stock,2 and 3 wheelers,EV,2035,Vehicles,Projection_region,3600000.0,7100000.0,3500000.0
+Europe,EV stock,Buses,BEV,2035,Vehicles,Projection_region,360000.0,430000.0,70000.0
+Europe,EV stock,Buses,EV,2035,Vehicles,Projection_region,360000.0,430000.0,70000.0
+Europe,EV stock,Buses,FCEV,2035,Vehicles,Projection_region,10000.0,10000.0,0.0
+Europe,EV stock,Buses,PHEV,2035,Vehicles,Projection_region,3000.0,3400.0,400.0
+Europe,EV stock,Cars,BEV,2035,Vehicles,Projection_region,100000000.0,93000000.0,-7000000.0
+Europe,EV stock,Cars,EV,2035,Vehicles,Projection_region,120000000.0,110000000.0,-10000000.0
+Europe,EV stock,Cars,FCEV,2035,Vehicles,Projection_region,6500.0,6300.0,-200.0
+Europe,EV stock,Cars,PHEV,2035,Vehicles,Projection_region,19000000.0,18000000.0,-1000000.0
+Europe,EV stock,Trucks,BEV,2035,Vehicles,Projection_region,1100000.0,1100000.0,0.0
+Europe,EV stock,Trucks,EV,2035,Vehicles,Projection_region,1100000.0,1200000.0,100000.0
+Europe,EV stock,Trucks,FCEV,2035,Vehicles,Projection_region,36000.0,37000.0,1000.0
+Europe,EV stock,Trucks,PHEV,2035,Vehicles,Projection_region,20000.0,29000.0,9000.0
+Europe,EV stock,Vans,BEV,2035,Vehicles,Projection_region,10000000.0,8700000.0,-1300000.0
+Europe,EV stock,Vans,EV,2035,Vehicles,Projection_region,11000000.0,9200000.0,-1800000.0
+Europe,EV stock,Vans,FCEV,2035,Vehicles,Projection_region,50000.0,43000.0,-7000.0
+Europe,EV stock,Vans,PHEV,2035,Vehicles,Projection_region,600000.0,560000.0,-40000.0
+Europe,EV stock share,2 and 3 wheelers,EV,2035,percent,Projection_region,8.0,16.0,8.0
+Europe,EV stock share,Buses,EV,2035,percent,Projection_region,20.0,23.0,3.0
+Europe,EV stock share,Cars,EV,2035,percent,Projection_region,36.0,34.0,-2.0
+Europe,EV stock share,Trucks,EV,2035,percent,Projection_region,11.0,12.0,1.0
+Europe,EV stock share,Vans,EV,2035,percent,Projection_region,26.0,22.0,-4.0
+Europe,Electric LDVs per charging point,EV,EV,2035,vehicles,Projection_region,30.0,30.0,0.0
+Europe,Electricity demand,2 and 3 wheelers,EV,2035,GWh,Projection_region,750.0,1600.0,850.0
+Europe,Electricity demand,Buses,EV,2035,GWh,Projection_region,16000.0,19000.0,3000.0
+Europe,Electricity demand,Cars,EV,2035,GWh,Projection_region,310000.0,290000.0,-20000.0
+Europe,Electricity demand,Trucks,EV,2035,GWh,Projection_region,100000.0,100000.0,0.0
+Europe,Electricity demand,Vans,EV,2035,GWh,Projection_region,98000.0,81000.0,-17000.0
+Europe,Oil displacement Mlge,2 and 3 wheelers,EV,2035,Million litres gasoline equivalent,Projection_region,320.0,670.0,350.0
+Europe,Oil displacement Mlge,Buses,EV,2035,Million litres gasoline equivalent,Projection_region,4000.0,4800.0,800.0
+Europe,Oil displacement Mlge,Cars,EV,2035,Million litres gasoline equivalent,Projection_region,97000.0,91000.0,-6000.0
+Europe,Oil displacement Mlge,Trucks,EV,2035,Million litres gasoline equivalent,Projection_region,18000.0,19000.0,1000.0
+Europe,Oil displacement Mlge,Vans,EV,2035,Million litres gasoline equivalent,Projection_region,26000.0,22000.0,-4000.0
+Europe,"Oil displacement, Mbd",2 and 3 wheelers,EV,2035,Million barrels per day,Projection_region,0.0055,0.012,0.006500000000000001
+Europe,"Oil displacement, Mbd",Buses,EV,2035,Million barrels per day,Projection_region,0.07,0.082,0.011999999999999997
+Europe,"Oil displacement, Mbd",Cars,EV,2035,Million barrels per day,Projection_region,1.7,1.6,-0.09999999999999987
+Europe,"Oil displacement, Mbd",Trucks,EV,2035,Million barrels per day,Projection_region,0.31,0.32,0.010000000000000009
+Europe,"Oil displacement, Mbd",Vans,EV,2035,Million barrels per day,Projection_region,0.46,0.37,-0.09000000000000002
+India,Average capacity per EV,EV,EV,2035,kW/EV,Projection_country,6.6,5.2,-1.3999999999999995
+India,Average capacity per EVSE,EV,EV,2035,kW/EVSE,Projection_country,46.0,49.0,3.0
+India,Battery deployment,2 and 3 wheelers,EV,2035,GWh,Projection_country,22.0,65.0,43.0
+India,Battery deployment,Buses,EV,2035,GWh,Projection_country,3.1,20.0,16.9
+India,Battery deployment,Cars,EV,2035,GWh,Projection_country,28.0,140.0,112.0
+India,Battery deployment,Trucks,EV,2035,GWh,Projection_country,0.08,4.7,4.62
+India,Battery deployment,Vans,EV,2035,GWh,Projection_country,0.71,6.3,5.59
+India,EV charging points,EVSE,Publicly available fast,2035,charging points,Projection_country,170000.0,370000.0,200000.0
+India,EV charging points,EVSE,Publicly available slow,2035,charging points,Projection_country,300000.0,690000.0,390000.0
+India,EV charging points,EVSE,Publicly available ultra-fast,2035,charging points,Projection_country,45000.0,120000.0,75000.0
+India,EV sales,2 and 3 wheelers,BEV,2035,Vehicles,Projection_country,4900000.0,14000000.0,9100000.0
+India,EV sales,2 and 3 wheelers,EV,2035,Vehicles,Projection_country,4900000.0,14000000.0,9100000.0
+India,EV sales,Buses,BEV,2035,Vehicles,Projection_country,12000.0,78000.0,66000.0
+India,EV sales,Buses,EV,2035,Vehicles,Projection_country,12000.0,78000.0,66000.0
+India,EV sales,Buses,FCEV,2035,Vehicles,Projection_country,220.0,1500.0,1280.0
+India,EV sales,Buses,PHEV,2035,Vehicles,Projection_country,13.0,44.0,31.0
+India,EV sales,Cars,BEV,2035,Vehicles,Projection_country,430000.0,2100000.0,1670000.0
+India,EV sales,Cars,EV,2035,Vehicles,Projection_country,430000.0,2100000.0,1670000.0
+India,EV sales,Trucks,BEV,2035,Vehicles,Projection_country,260.0,13000.0,12740.0
+India,EV sales,Trucks,EV,2035,Vehicles,Projection_country,260.0,13000.0,12740.0
+India,EV sales,Vans,BEV,2035,Vehicles,Projection_country,14000.0,120000.0,106000.0
+India,EV sales,Vans,EV,2035,Vehicles,Projection_country,14000.0,130000.0,116000.0
+India,EV sales,Vans,FCEV,2035,Vehicles,Projection_country,13.0,310.0,297.0
+India,EV sales,Vans,PHEV,2035,Vehicles,Projection_country,720.0,6400.0,5680.0
+India,EV sales share,2 and 3 wheelers,EV,2035,percent,Projection_country,20.0,58.0,38.0
+India,EV sales share,Buses,EV,2035,percent,Projection_country,9.0,56.0,47.0
+India,EV sales share,Cars,EV,2035,percent,Projection_country,5.0,24.0,19.0
+India,EV sales share,Trucks,EV,2035,percent,Projection_country,0.058,3.0,2.942
+India,EV sales share,Vans,EV,2035,percent,Projection_country,2.0,19.0,17.0
+India,EV stock,2 and 3 wheelers,BEV,2035,Vehicles,Projection_country,44000000.0,90000000.0,46000000.0
+India,EV stock,2 and 3 wheelers,EV,2035,Vehicles,Projection_country,44000000.0,90000000.0,46000000.0
+India,EV stock,Buses,BEV,2035,Vehicles,Projection_country,140000.0,450000.0,310000.0
+India,EV stock,Buses,EV,2035,Vehicles,Projection_country,140000.0,450000.0,310000.0
+India,EV stock,Buses,FCEV,2035,Vehicles,Projection_country,2400.0,8100.0,5700.0
+India,EV stock,Buses,PHEV,2035,Vehicles,Projection_country,130.0,270.0,140.0
+India,EV stock,Cars,BEV,2035,Vehicles,Projection_country,3500000.0,11000000.0,7500000.0
+India,EV stock,Cars,EV,2035,Vehicles,Projection_country,3500000.0,11000000.0,7500000.0
+India,EV stock,Cars,PHEV,2035,Vehicles,Projection_country,580.0,480.0,-100.0
+India,EV stock,Trucks,BEV,2035,Vehicles,Projection_country,3400.0,61000.0,57600.0
+India,EV stock,Trucks,EV,2035,Vehicles,Projection_country,3400.0,61000.0,57600.0
+India,EV stock,Vans,BEV,2035,Vehicles,Projection_country,140000.0,540000.0,400000.0
+India,EV stock,Vans,EV,2035,Vehicles,Projection_country,150000.0,570000.0,420000.0
+India,EV stock,Vans,FCEV,2035,Vehicles,Projection_country,110.0,1000.0,890.0
+India,EV stock,Vans,PHEV,2035,Vehicles,Projection_country,6200.0,27000.0,20800.0
+India,EV stock share,2 and 3 wheelers,EV,2035,percent,Projection_country,14.0,28.0,14.0
+India,EV stock share,Buses,EV,2035,percent,Projection_country,6.0,19.0,13.0
+India,EV stock share,Cars,EV,2035,percent,Projection_country,3.0,10.0,7.0
+India,EV stock share,Trucks,EV,2035,percent,Projection_country,0.049,0.88,0.831
+India,EV stock share,Vans,EV,2035,percent,Projection_country,1.0,5.0,4.0
+India,Electric LDVs per charging point,EV,EV,2035,vehicles,Projection_country,7.0,9.4,2.4000000000000004
+India,Electricity demand,2 and 3 wheelers,EV,2035,GWh,Projection_country,13000.0,28000.0,15000.0
+India,Electricity demand,Buses,EV,2035,GWh,Projection_country,4100.0,15000.0,10900.0
+India,Electricity demand,Cars,EV,2035,GWh,Projection_country,6900.0,23000.0,16100.0
+India,Electricity demand,Trucks,EV,2035,GWh,Projection_country,130.0,3100.0,2970.0
+India,Electricity demand,Vans,EV,2035,GWh,Projection_country,790.0,3500.0,2710.0
+India,Oil displacement Mlge,2 and 3 wheelers,EV,2035,Million litres gasoline equivalent,Projection_country,4300.0,9500.0,5200.0
+India,Oil displacement Mlge,Buses,EV,2035,Million litres gasoline equivalent,Projection_country,830.0,2700.0,1870.0
+India,Oil displacement Mlge,Cars,EV,2035,Million litres gasoline equivalent,Projection_country,3000.0,9400.0,6400.0
+India,Oil displacement Mlge,Trucks,EV,2035,Million litres gasoline equivalent,Projection_country,25.0,610.0,585.0
+India,Oil displacement Mlge,Vans,EV,2035,Million litres gasoline equivalent,Projection_country,280.0,1300.0,1020.0
+India,"Oil displacement, Mbd",2 and 3 wheelers,EV,2035,Million barrels per day,Projection_country,0.075,0.17,0.09500000000000001
+India,"Oil displacement, Mbd",Buses,EV,2035,Million barrels per day,Projection_country,0.015,0.047,0.032
+India,"Oil displacement, Mbd",Cars,EV,2035,Million barrels per day,Projection_country,0.053,0.16,0.10700000000000001
+India,"Oil displacement, Mbd",Trucks,EV,2035,Million barrels per day,Projection_country,0.00043,0.011,0.01057
+India,"Oil displacement, Mbd",Vans,EV,2035,Million barrels per day,Projection_country,0.0049,0.022,0.017099999999999997
+Japan,Average capacity per EV,EV,EV,2035,kW/EV,Projection_country,0.82,0.79,-0.029999999999999916
+Japan,Average capacity per EVSE,EV,EV,2035,kW/EVSE,Projection_country,47.0,47.0,0.0
+Japan,Battery deployment,2 and 3 wheelers,EV,2035,GWh,Projection_country,0.17,0.74,0.57
+Japan,Battery deployment,Buses,EV,2035,GWh,Projection_country,0.16,0.96,0.7999999999999999
+Japan,Battery deployment,Cars,EV,2035,GWh,Projection_country,27.0,43.0,16.0
+Japan,Battery deployment,Trucks,EV,2035,GWh,Projection_country,0.029,5.1,5.071
+Japan,Battery deployment,Vans,EV,2035,GWh,Projection_country,0.19,3.3,3.11
+Japan,EV charging points,EVSE,Publicly available fast,2035,charging points,Projection_country,13000.0,16000.0,3000.0
+Japan,EV charging points,EVSE,Publicly available slow,2035,charging points,Projection_country,49000.0,61000.0,12000.0
+Japan,EV charging points,EVSE,Publicly available ultra-fast,2035,charging points,Projection_country,10000.0,13000.0,3000.0
+Japan,EV sales,2 and 3 wheelers,BEV,2035,Vehicles,Projection_country,38000.0,170000.0,132000.0
+Japan,EV sales,2 and 3 wheelers,EV,2035,Vehicles,Projection_country,38000.0,170000.0,132000.0
+Japan,EV sales,Buses,BEV,2035,Vehicles,Projection_country,530.0,3200.0,2670.0
+Japan,EV sales,Buses,EV,2035,Vehicles,Projection_country,530.0,3200.0,2670.0
+Japan,EV sales,Buses,FCEV,2035,Vehicles,Projection_country,33.0,330.0,297.0
+Japan,EV sales,Cars,BEV,2035,Vehicles,Projection_country,280000.0,450000.0,170000.0
+Japan,EV sales,Cars,EV,2035,Vehicles,Projection_country,460000.0,700000.0,240000.0
+Japan,EV sales,Cars,FCEV,2035,Vehicles,Projection_country,690.0,2200.0,1510.0
+Japan,EV sales,Cars,PHEV,2035,Vehicles,Projection_country,180000.0,240000.0,60000.0
+Japan,EV sales,Trucks,BEV,2035,Vehicles,Projection_country,100.0,15000.0,14900.0
+Japan,EV sales,Trucks,EV,2035,Vehicles,Projection_country,100.0,18000.0,17900.0
+Japan,EV sales,Vans,BEV,2035,Vehicles,Projection_country,3800.0,73000.0,69200.0
+Japan,EV sales,Vans,EV,2035,Vehicles,Projection_country,4900.0,77000.0,72100.0
+Japan,EV sales,Vans,FCEV,2035,Vehicles,Projection_country,1400.0,6100.0,4700.0
+Japan,EV sales,Vans,PHEV,2035,Vehicles,Projection_country,1000.0,3800.0,2800.0
+Japan,EV sales share,2 and 3 wheelers,EV,2035,percent,Projection_country,14.0,59.0,45.0
+Japan,EV sales share,Buses,EV,2035,percent,Projection_country,5.0,29.0,24.0
+Japan,EV sales share,Cars,EV,2035,percent,Projection_country,13.0,20.0,7.0
+Japan,EV sales share,Trucks,EV,2035,percent,Projection_country,0.064,11.0,10.936
+Japan,EV sales share,Vans,EV,2035,percent,Projection_country,0.94,15.0,14.06
+Japan,EV stock,2 and 3 wheelers,BEV,2035,Vehicles,Projection_country,610000.0,1300000.0,690000.0
+Japan,EV stock,2 and 3 wheelers,EV,2035,Vehicles,Projection_country,610000.0,1300000.0,690000.0
+Japan,EV stock,Buses,BEV,2035,Vehicles,Projection_country,6300.0,18000.0,11700.0
+Japan,EV stock,Buses,EV,2035,Vehicles,Projection_country,6300.0,18000.0,11700.0
+Japan,EV stock,Buses,FCEV,2035,Vehicles,Projection_country,460.0,2000.0,1540.0
+Japan,EV stock,Buses,PHEV,2035,Vehicles,Projection_country,8.0,34.0,26.0
+Japan,EV stock,Cars,BEV,2035,Vehicles,Projection_country,2400000.0,3000000.0,600000.0
+Japan,EV stock,Cars,EV,2035,Vehicles,Projection_country,4000000.0,4800000.0,800000.0
+Japan,EV stock,Cars,FCEV,2035,Vehicles,Projection_country,10000.0,13000.0,3000.0
+Japan,EV stock,Cars,PHEV,2035,Vehicles,Projection_country,1600000.0,1800000.0,200000.0
+Japan,EV stock,Trucks,BEV,2035,Vehicles,Projection_country,1500.0,74000.0,72500.0
+Japan,EV stock,Trucks,EV,2035,Vehicles,Projection_country,1500.0,88000.0,86500.0
+Japan,EV stock,Trucks,FCEV,2035,Vehicles,Projection_country,4.3,2200.0,2195.7
+Japan,EV stock,Vans,BEV,2035,Vehicles,Projection_country,59000.0,400000.0,341000.0
+Japan,EV stock,Vans,EV,2035,Vehicles,Projection_country,69000.0,420000.0,351000.0
+Japan,EV stock,Vans,FCEV,2035,Vehicles,Projection_country,14000.0,34000.0,20000.0
+Japan,EV stock,Vans,PHEV,2035,Vehicles,Projection_country,11000.0,23000.0,12000.0
+Japan,EV stock share,2 and 3 wheelers,EV,2035,percent,Projection_country,7.0,16.0,9.0
+Japan,EV stock share,Buses,EV,2035,percent,Projection_country,3.0,9.0,6.0
+Japan,EV stock share,Cars,EV,2035,percent,Projection_country,7.0,8.0,1.0
+Japan,EV stock share,Trucks,EV,2035,percent,Projection_country,0.059,3.0,2.941
+Japan,EV stock share,Vans,EV,2035,percent,Projection_country,0.6,4.0,3.4
+Japan,Electric LDVs per charging point,EV,EV,2035,vehicles,Projection_country,57.0,59.0,2.0
+Japan,Electricity demand,2 and 3 wheelers,EV,2035,GWh,Projection_country,160.0,400.0,240.0
+Japan,Electricity demand,Buses,EV,2035,GWh,Projection_country,110.0,320.0,210.0
+Japan,Electricity demand,Cars,EV,2035,GWh,Projection_country,5500.0,6700.0,1200.0
+Japan,Electricity demand,Trucks,EV,2035,GWh,Projection_country,38.0,3300.0,3262.0
+Japan,Electricity demand,Vans,EV,2035,GWh,Projection_country,300.0,2300.0,2000.0
+Japan,Oil displacement Mlge,2 and 3 wheelers,EV,2035,Million litres gasoline equivalent,Projection_country,80.0,190.0,110.0
+Japan,Oil displacement Mlge,Buses,EV,2035,Million litres gasoline equivalent,Projection_country,33.0,100.0,67.0
+Japan,Oil displacement Mlge,Cars,EV,2035,Million litres gasoline equivalent,Projection_country,1800.0,2200.0,400.0
+Japan,Oil displacement Mlge,Trucks,EV,2035,Million litres gasoline equivalent,Projection_country,8.3,730.0,721.7
+Japan,Oil displacement Mlge,Vans,EV,2035,Million litres gasoline equivalent,Projection_country,110.0,870.0,760.0
+Japan,"Oil displacement, Mbd",2 and 3 wheelers,EV,2035,Million barrels per day,Projection_country,0.0014,0.0033,0.0019
+Japan,"Oil displacement, Mbd",Buses,EV,2035,Million barrels per day,Projection_country,0.00057,0.0018,0.00123
+Japan,"Oil displacement, Mbd",Cars,EV,2035,Million barrels per day,Projection_country,0.032,0.038,0.005999999999999998
+Japan,"Oil displacement, Mbd",Trucks,EV,2035,Million barrels per day,Projection_country,0.00014,0.013,0.01286
+Japan,"Oil displacement, Mbd",Vans,EV,2035,Million barrels per day,Projection_country,0.002,0.015,0.013
+Korea,Average capacity per EV,EV,EV,2035,kW/EV,Projection_country,3.5,3.5,0.0
+Korea,Average capacity per EVSE,EV,EV,2035,kW/EVSE,Projection_country,34.0,34.0,0.0
+Korea,Battery deployment,2 and 3 wheelers,EV,2035,GWh,Projection_country,0.036,0.19,0.154
+Korea,Battery deployment,Buses,EV,2035,GWh,Projection_country,1.5,9.4,7.9
+Korea,Battery deployment,Cars,EV,2035,GWh,Projection_country,65.0,77.0,12.0
+Korea,Battery deployment,Trucks,EV,2035,GWh,Projection_country,0.0065,1.2,1.1935
+Korea,Battery deployment,Vans,EV,2035,GWh,Projection_country,3.9,10.0,6.1
+Korea,EV charging points,EVSE,Publicly available fast,2035,charging points,Projection_country,79000.0,85000.0,6000.0
+Korea,EV charging points,EVSE,Publicly available slow,2035,charging points,Projection_country,750000.0,810000.0,60000.0
+Korea,EV charging points,EVSE,Publicly available ultra-fast,2035,charging points,Projection_country,62000.0,68000.0,6000.0
+Korea,EV sales,2 and 3 wheelers,BEV,2035,Vehicles,Projection_country,8000.0,43000.0,35000.0
+Korea,EV sales,2 and 3 wheelers,EV,2035,Vehicles,Projection_country,8000.0,43000.0,35000.0
+Korea,EV sales,Buses,BEV,2035,Vehicles,Projection_country,5000.0,31000.0,26000.0
+Korea,EV sales,Buses,EV,2035,Vehicles,Projection_country,5000.0,31000.0,26000.0
+Korea,EV sales,Buses,FCEV,2035,Vehicles,Projection_country,4000.0,8200.0,4200.0
+Korea,EV sales,Buses,PHEV,2035,Vehicles,Projection_country,11.0,110.0,99.0
+Korea,EV sales,Cars,BEV,2035,Vehicles,Projection_country,710000.0,850000.0,140000.0
+Korea,EV sales,Cars,EV,2035,Vehicles,Projection_country,740000.0,880000.0,140000.0
+Korea,EV sales,Cars,FCEV,2035,Vehicles,Projection_country,11000.0,11000.0,0.0
+Korea,EV sales,Cars,PHEV,2035,Vehicles,Projection_country,30000.0,37000.0,7000.0
+Korea,EV sales,Trucks,BEV,2035,Vehicles,Projection_country,19.0,3400.0,3381.0
+Korea,EV sales,Trucks,EV,2035,Vehicles,Projection_country,19.0,4200.0,4181.0
+Korea,EV sales,Trucks,FCEV,2035,Vehicles,Projection_country,19.0,68.0,49.0
+Korea,EV sales,Vans,BEV,2035,Vehicles,Projection_country,38000.0,100000.0,62000.0
+Korea,EV sales,Vans,EV,2035,Vehicles,Projection_country,41000.0,100000.0,59000.0
+Korea,EV sales,Vans,FCEV,2035,Vehicles,Projection_country,2400.0,6700.0,4300.0
+Korea,EV sales,Vans,PHEV,2035,Vehicles,Projection_country,2000.0,5200.0,3200.0
+Korea,EV sales share,2 and 3 wheelers,EV,2035,percent,Projection_country,11.0,60.0,49.0
+Korea,EV sales share,Buses,EV,2035,percent,Projection_country,8.0,48.0,40.0
+Korea,EV sales share,Cars,EV,2035,percent,Projection_country,50.0,60.0,10.0
+Korea,EV sales share,Trucks,EV,2035,percent,Projection_country,0.05,11.0,10.95
+Korea,EV sales share,Vans,EV,2035,percent,Projection_country,22.0,57.0,35.0
+Korea,EV stock,2 and 3 wheelers,BEV,2035,Vehicles,Projection_country,200000.0,420000.0,220000.0
+Korea,EV stock,2 and 3 wheelers,EV,2035,Vehicles,Projection_country,200000.0,420000.0,220000.0
+Korea,EV stock,Buses,BEV,2035,Vehicles,Projection_country,50000.0,170000.0,120000.0
+Korea,EV stock,Buses,EV,2035,Vehicles,Projection_country,50000.0,170000.0,120000.0
+Korea,EV stock,Buses,FCEV,2035,Vehicles,Projection_country,38000.0,64000.0,26000.0
+Korea,EV stock,Buses,PHEV,2035,Vehicles,Projection_country,100.0,470.0,370.0
+Korea,EV stock,Cars,BEV,2035,Vehicles,Projection_country,7700000.0,8100000.0,400000.0
+Korea,EV stock,Cars,EV,2035,Vehicles,Projection_country,8100000.0,8600000.0,500000.0
+Korea,EV stock,Cars,FCEV,2035,Vehicles,Projection_country,150000.0,160000.0,10000.0
+Korea,EV stock,Cars,PHEV,2035,Vehicles,Projection_country,400000.0,430000.0,30000.0
+Korea,EV stock,Trucks,BEV,2035,Vehicles,Projection_country,200.0,17000.0,16800.0
+Korea,EV stock,Trucks,EV,2035,Vehicles,Projection_country,200.0,20000.0,19800.0
+Korea,EV stock,Trucks,FCEV,2035,Vehicles,Projection_country,210.0,380.0,170.0
+Korea,EV stock,Vans,BEV,2035,Vehicles,Projection_country,540000.0,830000.0,290000.0
+Korea,EV stock,Vans,EV,2035,Vehicles,Projection_country,560000.0,870000.0,310000.0
+Korea,EV stock,Vans,FCEV,2035,Vehicles,Projection_country,25000.0,44000.0,19000.0
+Korea,EV stock,Vans,PHEV,2035,Vehicles,Projection_country,21000.0,36000.0,15000.0
+Korea,EV stock share,2 and 3 wheelers,EV,2035,percent,Projection_country,8.0,18.0,10.0
+Korea,EV stock share,Buses,EV,2035,percent,Projection_country,7.0,24.0,17.0
+Korea,EV stock share,Cars,EV,2035,percent,Projection_country,29.0,31.0,2.0
+Korea,EV stock share,Trucks,EV,2035,percent,Projection_country,0.036,4.0,3.964
+Korea,EV stock share,Vans,EV,2035,percent,Projection_country,16.0,25.0,9.0
+Korea,Electric LDVs per charging point,EV,EV,2035,vehicles,Projection_country,9.7,9.8,0.10000000000000142
+Korea,Electricity demand,2 and 3 wheelers,EV,2035,GWh,Projection_country,67.0,180.0,113.0
+Korea,Electricity demand,Buses,EV,2035,GWh,Projection_country,2500.0,7400.0,4900.0
+Korea,Electricity demand,Cars,EV,2035,GWh,Projection_country,25000.0,26000.0,1000.0
+Korea,Electricity demand,Trucks,EV,2035,GWh,Projection_country,11.0,970.0,959.0
+Korea,Electricity demand,Vans,EV,2035,GWh,Projection_country,2500.0,4300.0,1800.0
+Korea,Oil displacement Mlge,2 and 3 wheelers,EV,2035,Million litres gasoline equivalent,Projection_country,33.0,82.0,49.0
+Korea,Oil displacement Mlge,Buses,EV,2035,Million litres gasoline equivalent,Projection_country,520.0,1500.0,980.0
+Korea,Oil displacement Mlge,Cars,EV,2035,Million litres gasoline equivalent,Projection_country,11000.0,11000.0,0.0
+Korea,Oil displacement Mlge,Trucks,EV,2035,Million litres gasoline equivalent,Projection_country,2.3,210.0,207.7
+Korea,Oil displacement Mlge,Vans,EV,2035,Million litres gasoline equivalent,Projection_country,1700.0,2800.0,1100.0
+Korea,"Oil displacement, Mbd",2 and 3 wheelers,EV,2035,Million barrels per day,Projection_country,0.00056,0.0014,0.00084
+Korea,"Oil displacement, Mbd",Buses,EV,2035,Million barrels per day,Projection_country,0.009,0.026,0.017
+Korea,"Oil displacement, Mbd",Cars,EV,2035,Million barrels per day,Projection_country,0.18,0.2,0.020000000000000018
+Korea,"Oil displacement, Mbd",Trucks,EV,2035,Million barrels per day,Projection_country,4e-05,0.0036,0.00356
+Korea,"Oil displacement, Mbd",Vans,EV,2035,Million barrels per day,Projection_country,0.029,0.049,0.02
+Latin America,Average capacity per EV,EV,EV,2035,kW/EV,Projection_region,1.2,1.1,-0.09999999999999987
+Latin America,Average capacity per EVSE,EV,EV,2035,kW/EVSE,Projection_region,38.0,39.0,1.0
+Latin America,Battery deployment,2 and 3 wheelers,EV,2035,GWh,Projection_region,0.86,9.4,8.540000000000001
+Latin America,Battery deployment,Buses,EV,2035,GWh,Projection_region,1.7,9.4,7.7
+Latin America,Battery deployment,Cars,EV,2035,GWh,Projection_region,36.0,110.0,74.0
+Latin America,Battery deployment,Trucks,EV,2035,GWh,Projection_region,0.36,1.3,0.9400000000000001
+Latin America,Battery deployment,Vans,EV,2035,GWh,Projection_region,0.69,6.6,5.91
+Latin America,EV charging points,EVSE,Publicly available fast,2035,charging points,Projection_region,34000.0,60000.0,26000.0
+Latin America,EV charging points,EVSE,Publicly available slow,2035,charging points,Projection_region,170000.0,320000.0,150000.0
+Latin America,EV charging points,EVSE,Publicly available ultra-fast,2035,charging points,Projection_region,15000.0,31000.0,16000.0
+Latin America,EV sales,2 and 3 wheelers,BEV,2035,Vehicles,Projection_region,190000.0,2100000.0,1910000.0
+Latin America,EV sales,2 and 3 wheelers,EV,2035,Vehicles,Projection_region,190000.0,2100000.0,1910000.0
+Latin America,EV sales,Buses,BEV,2035,Vehicles,Projection_region,6000.0,34000.0,28000.0
+Latin America,EV sales,Buses,EV,2035,Vehicles,Projection_region,6300.0,35000.0,28700.0
+Latin America,EV sales,Buses,FCEV,2035,Vehicles,Projection_region,50.0,380.0,330.0
+Latin America,EV sales,Buses,PHEV,2035,Vehicles,Projection_region,310.0,640.0,330.0
+Latin America,EV sales,Cars,BEV,2035,Vehicles,Projection_region,380000.0,1300000.0,920000.0
+Latin America,EV sales,Cars,EV,2035,Vehicles,Projection_region,710000.0,2000000.0,1290000.0
+Latin America,EV sales,Cars,PHEV,2035,Vehicles,Projection_region,330000.0,690000.0,360000.0
+Latin America,EV sales,Trucks,BEV,2035,Vehicles,Projection_region,1200.0,4200.0,3000.0
+Latin America,EV sales,Trucks,EV,2035,Vehicles,Projection_region,1200.0,4600.0,3400.0
+Latin America,EV sales,Vans,BEV,2035,Vehicles,Projection_region,13000.0,110000.0,97000.0
+Latin America,EV sales,Vans,EV,2035,Vehicles,Projection_region,14000.0,120000.0,106000.0
+Latin America,EV sales,Vans,FCEV,2035,Vehicles,Projection_region,18.0,450.0,432.0
+Latin America,EV sales,Vans,PHEV,2035,Vehicles,Projection_region,690.0,6100.0,5410.0
+Latin America,EV sales share,2 and 3 wheelers,EV,2035,percent,Projection_region,3.0,33.0,30.0
+Latin America,EV sales share,Buses,EV,2035,percent,Projection_region,5.0,27.0,22.0
+Latin America,EV sales share,Cars,EV,2035,percent,Projection_region,9.0,25.0,16.0
+Latin America,EV sales share,Trucks,EV,2035,percent,Projection_region,0.27,1.0,0.73
+Latin America,EV sales share,Vans,EV,2035,percent,Projection_region,0.87,8.0,7.13
+Latin America,EV stock,2 and 3 wheelers,BEV,2035,Vehicles,Projection_region,1800000.0,9200000.0,7400000.0
+Latin America,EV stock,2 and 3 wheelers,EV,2035,Vehicles,Projection_region,1800000.0,9200000.0,7400000.0
+Latin America,EV stock,Buses,BEV,2035,Vehicles,Projection_region,72000.0,220000.0,148000.0
+Latin America,EV stock,Buses,EV,2035,Vehicles,Projection_region,75000.0,220000.0,145000.0
+Latin America,EV stock,Buses,FCEV,2035,Vehicles,Projection_region,630.0,2100.0,1470.0
+Latin America,EV stock,Buses,PHEV,2035,Vehicles,Projection_region,3100.0,5100.0,2000.0
+Latin America,EV stock,Cars,BEV,2035,Vehicles,Projection_region,3700000.0,8300000.0,4600000.0
+Latin America,EV stock,Cars,EV,2035,Vehicles,Projection_region,6900000.0,13000000.0,6100000.0
+Latin America,EV stock,Cars,FCEV,2035,Vehicles,Projection_region,3.9,3.9,0.0
+Latin America,EV stock,Cars,PHEV,2035,Vehicles,Projection_region,3200000.0,4900000.0,1700000.0
+Latin America,EV stock,Trucks,BEV,2035,Vehicles,Projection_region,16000.0,31000.0,15000.0
+Latin America,EV stock,Trucks,EV,2035,Vehicles,Projection_region,16000.0,31000.0,15000.0
+Latin America,EV stock,Vans,BEV,2035,Vehicles,Projection_region,140000.0,540000.0,400000.0
+Latin America,EV stock,Vans,EV,2035,Vehicles,Projection_region,150000.0,570000.0,420000.0
+Latin America,EV stock,Vans,FCEV,2035,Vehicles,Projection_region,180.0,1600.0,1420.0
+Latin America,EV stock,Vans,PHEV,2035,Vehicles,Projection_region,8100.0,29000.0,20900.0
+Latin America,EV stock share,2 and 3 wheelers,EV,2035,percent,Projection_region,2.0,11.0,9.0
+Latin America,EV stock share,Buses,EV,2035,percent,Projection_region,3.0,10.0,7.0
+Latin America,EV stock share,Cars,EV,2035,percent,Projection_region,6.0,11.0,5.0
+Latin America,EV stock share,Trucks,EV,2035,percent,Projection_region,0.2,0.39,0.19
+Latin America,EV stock share,Vans,EV,2035,percent,Projection_region,0.53,2.0,1.47
+Latin America,Electric LDVs per charging point,EV,EV,2035,vehicles,Projection_region,32.0,34.0,2.0
+Latin America,Electricity demand,2 and 3 wheelers,EV,2035,GWh,Projection_region,580.0,3600.0,3020.0
+Latin America,Electricity demand,Buses,EV,2035,GWh,Projection_region,2400.0,8400.0,6000.0
+Latin America,Electricity demand,Cars,EV,2035,GWh,Projection_region,21000.0,42000.0,21000.0
+Latin America,Electricity demand,Trucks,EV,2035,GWh,Projection_region,650.0,1400.0,750.0
+Latin America,Electricity demand,Vans,EV,2035,GWh,Projection_region,1000.0,4200.0,3200.0
+Latin America,Oil displacement Mlge,2 and 3 wheelers,EV,2035,Million litres gasoline equivalent,Projection_region,220.0,1400.0,1180.0
+Latin America,Oil displacement Mlge,Buses,EV,2035,Million litres gasoline equivalent,Projection_region,630.0,2200.0,1570.0
+Latin America,Oil displacement Mlge,Cars,EV,2035,Million litres gasoline equivalent,Projection_region,7800.0,15000.0,7200.0
+Latin America,Oil displacement Mlge,Trucks,EV,2035,Million litres gasoline equivalent,Projection_region,130.0,280.0,150.0
+Latin America,Oil displacement Mlge,Vans,EV,2035,Million litres gasoline equivalent,Projection_region,410.0,1700.0,1290.0
+Latin America,"Oil displacement, Mbd",2 and 3 wheelers,EV,2035,Million barrels per day,Projection_region,0.0038,0.024,0.0202
+Latin America,"Oil displacement, Mbd",Buses,EV,2035,Million barrels per day,Projection_region,0.011,0.037,0.026
+Latin America,"Oil displacement, Mbd",Cars,EV,2035,Million barrels per day,Projection_region,0.13,0.26,0.13
+Latin America,"Oil displacement, Mbd",Trucks,EV,2035,Million barrels per day,Projection_region,0.0022,0.0048,0.0025999999999999994
+Latin America,"Oil displacement, Mbd",Vans,EV,2035,Million barrels per day,Projection_region,0.007,0.029,0.022000000000000002
+Southeast Asia,Average capacity per EV,EV,EV,2035,kW/EV,Projection_region,1.7,1.6,-0.09999999999999987
+Southeast Asia,Average capacity per EVSE,EV,EV,2035,kW/EVSE,Projection_region,64.0,63.0,-1.0
+Southeast Asia,Battery deployment,2 and 3 wheelers,EV,2035,GWh,Projection_region,23.0,42.0,19.0
+Southeast Asia,Battery deployment,Buses,EV,2035,GWh,Projection_region,0.98,6.7,5.720000000000001
+Southeast Asia,Battery deployment,Cars,EV,2035,GWh,Projection_region,100.0,160.0,60.0
+Southeast Asia,Battery deployment,Trucks,EV,2035,GWh,Projection_region,0.12,3.4,3.28
+Southeast Asia,Battery deployment,Vans,EV,2035,GWh,Projection_region,0.44,2.8,2.36
+Southeast Asia,EV charging points,EVSE,Publicly available fast,2035,charging points,Projection_region,83000.0,100000.0,17000.0
+Southeast Asia,EV charging points,EVSE,Publicly available slow,2035,charging points,Projection_region,220000.0,280000.0,60000.0
+Southeast Asia,EV charging points,EVSE,Publicly available ultra-fast,2035,charging points,Projection_region,64000.0,79000.0,15000.0
+Southeast Asia,EV sales,2 and 3 wheelers,BEV,2035,Vehicles,Projection_region,5100000.0,9300000.0,4200000.0
+Southeast Asia,EV sales,2 and 3 wheelers,EV,2035,Vehicles,Projection_region,5100000.0,9300000.0,4200000.0
+Southeast Asia,EV sales,Buses,BEV,2035,Vehicles,Projection_region,3900.0,27000.0,23100.0
+Southeast Asia,EV sales,Buses,EV,2035,Vehicles,Projection_region,3900.0,27000.0,23100.0
+Southeast Asia,EV sales,Buses,FCEV,2035,Vehicles,Projection_region,9.5,150.0,140.5
+Southeast Asia,EV sales,Buses,PHEV,2035,Vehicles,Projection_region,56.0,13.0,-43.0
+Southeast Asia,EV sales,Cars,BEV,2035,Vehicles,Projection_region,1400000.0,2200000.0,800000.0
+Southeast Asia,EV sales,Cars,EV,2035,Vehicles,Projection_region,1700000.0,2700000.0,1000000.0
+Southeast Asia,EV sales,Cars,PHEV,2035,Vehicles,Projection_region,300000.0,570000.0,270000.0
+Southeast Asia,EV sales,Trucks,BEV,2035,Vehicles,Projection_region,400.0,12000.0,11600.0
+Southeast Asia,EV sales,Trucks,EV,2035,Vehicles,Projection_region,400.0,13000.0,12600.0
+Southeast Asia,EV sales,Vans,BEV,2035,Vehicles,Projection_region,8200.0,52000.0,43800.0
+Southeast Asia,EV sales,Vans,EV,2035,Vehicles,Projection_region,8500.0,55000.0,46500.0
+Southeast Asia,EV sales,Vans,FCEV,2035,Vehicles,Projection_region,6.7,110.0,103.3
+Southeast Asia,EV sales,Vans,PHEV,2035,Vehicles,Projection_region,350.0,2200.0,1850.0
+Southeast Asia,EV sales share,2 and 3 wheelers,EV,2035,percent,Projection_region,25.0,45.0,20.0
+Southeast Asia,EV sales share,Buses,EV,2035,percent,Projection_region,5.0,33.0,28.0
+Southeast Asia,EV sales share,Cars,EV,2035,percent,Projection_region,36.0,58.0,22.0
+Southeast Asia,EV sales share,Trucks,EV,2035,percent,Projection_region,0.1,3.0,2.9
+Southeast Asia,EV sales share,Vans,EV,2035,percent,Projection_region,2.0,11.0,9.0
+Southeast Asia,EV stock,2 and 3 wheelers,BEV,2035,Vehicles,Projection_region,30000000.0,47000000.0,17000000.0
+Southeast Asia,EV stock,2 and 3 wheelers,EV,2035,Vehicles,Projection_region,30000000.0,47000000.0,17000000.0
+Southeast Asia,EV stock,Buses,BEV,2035,Vehicles,Projection_region,29000.0,110000.0,81000.0
+Southeast Asia,EV stock,Buses,EV,2035,Vehicles,Projection_region,29000.0,120000.0,91000.0
+Southeast Asia,EV stock,Buses,FCEV,2035,Vehicles,Projection_region,69.0,510.0,441.0
+Southeast Asia,EV stock,Buses,PHEV,2035,Vehicles,Projection_region,410.0,380.0,-30.0
+Southeast Asia,EV stock,Cars,BEV,2035,Vehicles,Projection_region,11000000.0,15000000.0,4000000.0
+Southeast Asia,EV stock,Cars,EV,2035,Vehicles,Projection_region,13000000.0,18000000.0,5000000.0
+Southeast Asia,EV stock,Cars,PHEV,2035,Vehicles,Projection_region,2000000.0,3000000.0,1000000.0
+Southeast Asia,EV stock,Trucks,BEV,2035,Vehicles,Projection_region,4200.0,60000.0,55800.0
+Southeast Asia,EV stock,Trucks,EV,2035,Vehicles,Projection_region,4200.0,63000.0,58800.0
+Southeast Asia,EV stock,Vans,BEV,2035,Vehicles,Projection_region,85000.0,270000.0,185000.0
+Southeast Asia,EV stock,Vans,EV,2035,Vehicles,Projection_region,88000.0,280000.0,192000.0
+Southeast Asia,EV stock,Vans,FCEV,2035,Vehicles,Projection_region,64.0,420.0,356.0
+Southeast Asia,EV stock,Vans,PHEV,2035,Vehicles,Projection_region,3400.0,11000.0,7600.0
+Southeast Asia,EV stock share,2 and 3 wheelers,EV,2035,percent,Projection_region,9.0,14.0,5.0
+Southeast Asia,EV stock share,Buses,EV,2035,percent,Projection_region,4.0,17.0,13.0
+Southeast Asia,EV stock share,Cars,EV,2035,percent,Projection_region,17.0,23.0,6.0
+Southeast Asia,EV stock share,Trucks,EV,2035,percent,Projection_region,0.061,0.94,0.879
+Southeast Asia,EV stock share,Vans,EV,2035,percent,Projection_region,0.89,3.0,2.11
+Southeast Asia,Electric LDVs per charging point,EV,EV,2035,vehicles,Projection_region,37.0,40.0,3.0
+Southeast Asia,Electricity demand,2 and 3 wheelers,EV,2035,GWh,Projection_region,9700.0,16000.0,6300.0
+Southeast Asia,Electricity demand,Buses,EV,2035,GWh,Projection_region,1100.0,4600.0,3500.0
+Southeast Asia,Electricity demand,Cars,EV,2035,GWh,Projection_region,30000.0,41000.0,11000.0
+Southeast Asia,Electricity demand,Trucks,EV,2035,GWh,Projection_region,250.0,3800.0,3550.0
+Southeast Asia,Electricity demand,Vans,EV,2035,GWh,Projection_region,590.0,2100.0,1510.0
+Southeast Asia,Oil displacement Mlge,2 and 3 wheelers,EV,2035,Million litres gasoline equivalent,Projection_region,4300.0,7100.0,2800.0
+Southeast Asia,Oil displacement Mlge,Buses,EV,2035,Million litres gasoline equivalent,Projection_region,260.0,1100.0,840.0
+Southeast Asia,Oil displacement Mlge,Cars,EV,2035,Million litres gasoline equivalent,Projection_region,17000.0,23000.0,6000.0
+Southeast Asia,Oil displacement Mlge,Trucks,EV,2035,Million litres gasoline equivalent,Projection_region,47.0,670.0,623.0
+Southeast Asia,Oil displacement Mlge,Vans,EV,2035,Million litres gasoline equivalent,Projection_region,320.0,1100.0,780.0
+Southeast Asia,"Oil displacement, Mbd",2 and 3 wheelers,EV,2035,Million barrels per day,Projection_region,0.074,0.12,0.046
+Southeast Asia,"Oil displacement, Mbd",Buses,EV,2035,Million barrels per day,Projection_region,0.0045,0.02,0.0155
+Southeast Asia,"Oil displacement, Mbd",Cars,EV,2035,Million barrels per day,Projection_region,0.29,0.4,0.11000000000000004
+Southeast Asia,"Oil displacement, Mbd",Trucks,EV,2035,Million barrels per day,Projection_region,0.00081,0.011,0.01019
+Southeast Asia,"Oil displacement, Mbd",Vans,EV,2035,Million barrels per day,Projection_region,0.0055,0.019,0.0135
+USA,Average capacity per EV,EV,EV,2035,kW/EV,Projection_country,1.5,1.4,-0.10000000000000009
+USA,Average capacity per EVSE,EV,EV,2035,kW/EVSE,Projection_country,67.0,63.0,-4.0
+USA,Battery deployment,2 and 3 wheelers,EV,2035,GWh,Projection_country,0.045,0.83,0.7849999999999999
+USA,Battery deployment,Buses,EV,2035,GWh,Projection_country,0.96,3.4,2.44
+USA,Battery deployment,Cars,EV,2035,GWh,Projection_country,100.0,260.0,160.0
+USA,Battery deployment,Trucks,EV,2035,GWh,Projection_country,6.2,38.0,31.8
+USA,Battery deployment,Vans,EV,2035,GWh,Projection_country,1.3,20.0,18.7
+USA,EV charging points,EVSE,Publicly available fast,2035,charging points,Projection_country,55000.0,93000.0,38000.0
+USA,EV charging points,EVSE,Publicly available slow,2035,charging points,Projection_country,280000.0,420000.0,140000.0
+USA,EV charging points,EVSE,Publicly available ultra-fast,2035,charging points,Projection_country,86000.0,120000.0,34000.0
+USA,EV sales,2 and 3 wheelers,BEV,2035,Vehicles,Projection_country,9900.0,180000.0,170100.0
+USA,EV sales,2 and 3 wheelers,EV,2035,Vehicles,Projection_country,9900.0,180000.0,170100.0
+USA,EV sales,Buses,BEV,2035,Vehicles,Projection_country,3200.0,11000.0,7800.0
+USA,EV sales,Buses,EV,2035,Vehicles,Projection_country,3300.0,11000.0,7700.0
+USA,EV sales,Buses,FCEV,2035,Vehicles,Projection_country,410.0,3200.0,2790.0
+USA,EV sales,Buses,PHEV,2035,Vehicles,Projection_country,130.0,32.0,-98.0
+USA,EV sales,Cars,BEV,2035,Vehicles,Projection_country,970000.0,2500000.0,1530000.0
+USA,EV sales,Cars,EV,2035,Vehicles,Projection_country,1200000.0,3100000.0,1900000.0
+USA,EV sales,Cars,PHEV,2035,Vehicles,Projection_country,270000.0,640000.0,370000.0
+USA,EV sales,Trucks,BEV,2035,Vehicles,Projection_country,20000.0,110000.0,90000.0
+USA,EV sales,Trucks,EV,2035,Vehicles,Projection_country,20000.0,120000.0,100000.0
+USA,EV sales,Trucks,FCEV,2035,Vehicles,Projection_country,32.0,8200.0,8168.0
+USA,EV sales,Vans,BEV,2035,Vehicles,Projection_country,14000.0,220000.0,206000.0
+USA,EV sales,Vans,EV,2035,Vehicles,Projection_country,15000.0,230000.0,215000.0
+USA,EV sales,Vans,FCEV,2035,Vehicles,Projection_country,74.0,1700.0,1626.0
+USA,EV sales,Vans,PHEV,2035,Vehicles,Projection_country,1100.0,11000.0,9900.0
+USA,EV sales share,2 and 3 wheelers,EV,2035,percent,Projection_country,2.0,32.0,30.0
+USA,EV sales share,Buses,EV,2035,percent,Projection_country,3.0,11.0,8.0
+USA,EV sales share,Cars,EV,2035,percent,Projection_country,8.0,20.0,12.0
+USA,EV sales share,Trucks,EV,2035,percent,Projection_country,2.0,12.0,10.0
+USA,EV sales share,Vans,EV,2035,percent,Projection_country,1.0,19.0,18.0
+USA,EV stock,2 and 3 wheelers,BEV,2035,Vehicles,Projection_country,160000.0,650000.0,490000.0
+USA,EV stock,2 and 3 wheelers,EV,2035,Vehicles,Projection_country,160000.0,650000.0,490000.0
+USA,EV stock,Buses,BEV,2035,Vehicles,Projection_country,30000.0,64000.0,34000.0
+USA,EV stock,Buses,EV,2035,Vehicles,Projection_country,31000.0,64000.0,33000.0
+USA,EV stock,Buses,FCEV,2035,Vehicles,Projection_country,3700.0,17000.0,13300.0
+USA,EV stock,Buses,PHEV,2035,Vehicles,Projection_country,1100.0,480.0,-620.0
+USA,EV stock,Cars,BEV,2035,Vehicles,Projection_country,15000000.0,21000000.0,6000000.0
+USA,EV stock,Cars,EV,2035,Vehicles,Projection_country,19000000.0,27000000.0,8000000.0
+USA,EV stock,Cars,FCEV,2035,Vehicles,Projection_country,14000.0,13000.0,-1000.0
+USA,EV stock,Cars,PHEV,2035,Vehicles,Projection_country,4100000.0,5700000.0,1600000.0
+USA,EV stock,Trucks,BEV,2035,Vehicles,Projection_country,220000.0,540000.0,320000.0
+USA,EV stock,Trucks,EV,2035,Vehicles,Projection_country,220000.0,570000.0,350000.0
+USA,EV stock,Trucks,FCEV,2035,Vehicles,Projection_country,680.0,37000.0,36320.0
+USA,EV stock,Vans,BEV,2035,Vehicles,Projection_country,160000.0,920000.0,760000.0
+USA,EV stock,Vans,EV,2035,Vehicles,Projection_country,170000.0,970000.0,800000.0
+USA,EV stock,Vans,FCEV,2035,Vehicles,Projection_country,680.0,5900.0,5220.0
+USA,EV stock,Vans,PHEV,2035,Vehicles,Projection_country,11000.0,47000.0,36000.0
+USA,EV stock share,2 and 3 wheelers,EV,2035,percent,Projection_country,2.0,6.0,4.0
+USA,EV stock share,Buses,EV,2035,percent,Projection_country,3.0,7.0,4.0
+USA,EV stock share,Cars,EV,2035,percent,Projection_country,7.0,10.0,3.0
+USA,EV stock share,Trucks,EV,2035,percent,Projection_country,1.0,3.0,2.0
+USA,EV stock share,Vans,EV,2035,percent,Projection_country,1.0,6.0,5.0
+USA,Electric LDVs per charging point,EV,EV,2035,vehicles,Projection_country,45.0,44.0,-1.0
+USA,Electricity demand,2 and 3 wheelers,EV,2035,GWh,Projection_country,21.0,110.0,89.0
+USA,Electricity demand,Buses,EV,2035,GWh,Projection_country,450.0,1000.0,550.0
+USA,Electricity demand,Cars,EV,2035,GWh,Projection_country,43000.0,62000.0,19000.0
+USA,Electricity demand,Trucks,EV,2035,GWh,Projection_country,3600.0,12000.0,8400.0
+USA,Electricity demand,Vans,EV,2035,GWh,Projection_country,700.0,4900.0,4200.0
+USA,Oil displacement Mlge,2 and 3 wheelers,EV,2035,Million litres gasoline equivalent,Projection_country,8.7,45.0,36.3
+USA,Oil displacement Mlge,Buses,EV,2035,Million litres gasoline equivalent,Projection_country,73.0,160.0,87.0
+USA,Oil displacement Mlge,Cars,EV,2035,Million litres gasoline equivalent,Projection_country,19000.0,28000.0,9000.0
+USA,Oil displacement Mlge,Trucks,EV,2035,Million litres gasoline equivalent,Projection_country,750.0,2400.0,1650.0
+USA,Oil displacement Mlge,Vans,EV,2035,Million litres gasoline equivalent,Projection_country,340.0,2400.0,2060.0
+USA,"Oil displacement, Mbd",2 and 3 wheelers,EV,2035,Million barrels per day,Projection_country,0.00015,0.00079,0.00064
+USA,"Oil displacement, Mbd",Buses,EV,2035,Million barrels per day,Projection_country,0.0013,0.0028,0.0015
+USA,"Oil displacement, Mbd",Cars,EV,2035,Million barrels per day,Projection_country,0.33,0.48,0.14999999999999997
+USA,"Oil displacement, Mbd",Trucks,EV,2035,Million barrels per day,Projection_country,0.013,0.042,0.029000000000000005
+USA,"Oil displacement, Mbd",Vans,EV,2035,Million barrels per day,Projection_country,0.0059,0.041,0.0351
+World,Average capacity per EV,EV,EV,2035,kW/EV,_World,3.4,3.4,0.0
+World,Average capacity per EVSE,EV,EV,2035,kW/EVSE,_World,64.0,63.0,-1.0
+World,Battery deployment,2 and 3 wheelers,EV,2035,GWh,_World,120.0,210.0,90.0
+World,Battery deployment,Buses,EV,2035,GWh,_World,52.0,120.0,68.0
+World,Battery deployment,Cars,EV,2035,GWh,_World,3300.0,3700.0,400.0
+World,Battery deployment,Trucks,EV,2035,GWh,_World,430.0,500.0,70.0
+World,Battery deployment,Vans,EV,2035,GWh,_World,170.0,210.0,40.0
+World,EV charging points,EVSE,Publicly available fast,2035,charging points,_World,6600000.0,6900000.0,300000.0
+World,EV charging points,EVSE,Publicly available slow,2035,charging points,_World,14000000.0,15000000.0,1000000.0
+World,EV charging points,EVSE,Publicly available ultra-fast,2035,charging points,_World,4600000.0,4700000.0,100000.0
+World,EV sales,2 and 3 wheelers,BEV,2035,Vehicles,_World,27000000.0,47000000.0,20000000.0
+World,EV sales,2 and 3 wheelers,EV,2035,Vehicles,_World,27000000.0,47000000.0,20000000.0
+World,EV sales,Buses,BEV,2035,Vehicles,_World,200000.0,460000.0,260000.0
+World,EV sales,Buses,EV,2035,Vehicles,_World,200000.0,460000.0,260000.0
+World,EV sales,Buses,FCEV,2035,Vehicles,_World,11000.0,20000.0,9000.0
+World,EV sales,Buses,PHEV,2035,Vehicles,_World,4200.0,4500.0,300.0
+World,EV sales,Cars,BEV,2035,Vehicles,_World,42000000.0,46000000.0,4000000.0
+World,EV sales,Cars,EV,2035,Vehicles,_World,49000000.0,55000000.0,6000000.0
+World,EV sales,Cars,FCEV,2035,Vehicles,_World,12000.0,13000.0,1000.0
+World,EV sales,Cars,PHEV,2035,Vehicles,_World,7000000.0,8900000.0,1900000.0
+World,EV sales,Trucks,BEV,2035,Vehicles,_World,1100000.0,1300000.0,200000.0
+World,EV sales,Trucks,EV,2035,Vehicles,_World,1100000.0,1300000.0,200000.0
+World,EV sales,Trucks,FCEV,2035,Vehicles,_World,66000.0,76000.0,10000.0
+World,EV sales,Trucks,PHEV,2035,Vehicles,_World,23000.0,46000.0,23000.0
+World,EV sales,Vans,BEV,2035,Vehicles,_World,3100000.0,3600000.0,500000.0
+World,EV sales,Vans,EV,2035,Vehicles,_World,3200000.0,3800000.0,600000.0
+World,EV sales,Vans,FCEV,2035,Vehicles,_World,20000.0,30000.0,10000.0
+World,EV sales,Vans,PHEV,2035,Vehicles,_World,77000.0,170000.0,93000.0
+World,EV sales share,2 and 3 wheelers,EV,2035,percent,_World,33.0,56.0,23.0
+World,EV sales share,Buses,EV,2035,percent,_World,10.0,23.0,13.0
+World,EV sales share,Cars,EV,2035,percent,_World,46.0,53.0,7.0
+World,EV sales share,Trucks,EV,2035,percent,_World,20.0,23.0,3.0
+World,EV sales share,Vans,EV,2035,percent,_World,29.0,35.0,6.0
+World,EV stock,2 and 3 wheelers,BEV,2035,Vehicles,_World,210000000.0,300000000.0,90000000.0
+World,EV stock,2 and 3 wheelers,EV,2035,Vehicles,_World,210000000.0,300000000.0,90000000.0
+World,EV stock,Buses,BEV,2035,Vehicles,_World,2400000.0,3500000.0,1100000.0
+World,EV stock,Buses,EV,2035,Vehicles,_World,2500000.0,3600000.0,1100000.0
+World,EV stock,Buses,FCEV,2035,Vehicles,_World,96000.0,150000.0,54000.0
+World,EV stock,Buses,PHEV,2035,Vehicles,_World,54000.0,64000.0,10000.0
+World,EV stock,Cars,BEV,2035,Vehicles,_World,340000000.0,360000000.0,20000000.0
+World,EV stock,Cars,EV,2035,Vehicles,_World,450000000.0,470000000.0,20000000.0
+World,EV stock,Cars,FCEV,2035,Vehicles,_World,190000.0,190000.0,0.0
+World,EV stock,Cars,PHEV,2035,Vehicles,_World,110000000.0,110000000.0,0.0
+World,EV stock,Trucks,BEV,2035,Vehicles,_World,9300000.0,10000000.0,700000.0
+World,EV stock,Trucks,EV,2035,Vehicles,_World,9500000.0,10000000.0,500000.0
+World,EV stock,Trucks,FCEV,2035,Vehicles,_World,340000.0,380000.0,40000.0
+World,EV stock,Trucks,PHEV,2035,Vehicles,_World,230000.0,320000.0,90000.0
+World,EV stock,Vans,BEV,2035,Vehicles,_World,20000000.0,21000000.0,1000000.0
+World,EV stock,Vans,EV,2035,Vehicles,_World,21000000.0,22000000.0,1000000.0
+World,EV stock,Vans,FCEV,2035,Vehicles,_World,110000.0,150000.0,40000.0
+World,EV stock,Vans,PHEV,2035,Vehicles,_World,1200000.0,1300000.0,100000.0
+World,EV stock share,2 and 3 wheelers,EV,2035,percent,_World,19.0,27.0,8.0
+World,EV stock share,Buses,EV,2035,percent,_World,11.0,16.0,5.0
+World,EV stock share,Cars,EV,2035,percent,_World,27.0,28.0,1.0
+World,EV stock share,Trucks,EV,2035,percent,_World,9.0,10.0,1.0
+World,EV stock share,Vans,EV,2035,percent,_World,12.0,13.0,1.0
+World,Electric LDVs per charging point,EV,EV,2035,vehicles,_World,19.0,19.0,0.0
+World,Electricity demand,2 and 3 wheelers,EV,2035,GWh,_World,49000.0,79000.0,30000.0
+World,Electricity demand,Buses,EV,2035,GWh,_World,65000.0,100000.0,35000.0
+World,Electricity demand,Cars,EV,2035,GWh,_World,880000.0,940000.0,60000.0
+World,Electricity demand,Trucks,EV,2035,GWh,_World,440000.0,480000.0,40000.0
+World,Electricity demand,Vans,EV,2035,GWh,_World,130000.0,130000.0,0.0
+World,Oil displacement Mlge,2 and 3 wheelers,EV,2035,Million litres gasoline equivalent,_World,21000.0,33000.0,12000.0
+World,Oil displacement Mlge,Buses,EV,2035,Million litres gasoline equivalent,_World,18000.0,26000.0,8000.0
+World,Oil displacement Mlge,Cars,EV,2035,Million litres gasoline equivalent,_World,390000.0,420000.0,30000.0
+World,Oil displacement Mlge,Trucks,EV,2035,Million litres gasoline equivalent,_World,56000.0,62000.0,6000.0
+World,Oil displacement Mlge,Vans,EV,2035,Million litres gasoline equivalent,_World,44000.0,46000.0,2000.0
+World,"Oil displacement, Mbd",2 and 3 wheelers,EV,2035,Million barrels per day,_World,0.36,0.56,0.20000000000000007
+World,"Oil displacement, Mbd",Buses,EV,2035,Million barrels per day,_World,0.3,0.45,0.15000000000000002
+World,"Oil displacement, Mbd",Cars,EV,2035,Million barrels per day,_World,6.7,7.1,0.39999999999999947
+World,"Oil displacement, Mbd",Trucks,EV,2035,Million barrels per day,_World,0.94,1.0,0.06000000000000005
+World,"Oil displacement, Mbd",Vans,EV,2035,Million barrels per day,_World,0.75,0.8,0.050000000000000044
