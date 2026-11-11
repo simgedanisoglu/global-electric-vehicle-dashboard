@@ -9,10 +9,10 @@ import plotly.graph_objects as go
 MODES = ("Cars", "Buses", "Trucks", "Vans", "2 and 3 wheelers")
 METRICS = {
     "Oil displacement Mlge": (
-        "Petrol ikamesi", "Million litres gasoline equivalent"
+        "Oil displacement", "Million litres gasoline equivalent"
     ),
-    "Battery deployment": ("Batarya kullanımı", "GWh"),
-    "Electricity demand": ("EV elektrik talebi", "GWh"),
+    "Battery deployment": ("Battery deployment", "GWh"),
+    "Electricity demand": ("EV electricity demand", "GWh"),
 }
 MODE_COLORS = dict(zip(MODES, px.colors.qualitative.Set2))
 
@@ -93,13 +93,13 @@ def build_energy_treemap(
     ]
     trace.textinfo = "label+percent parent"
     trace.hovertemplate = (
-        "Araç türü / kapsam: %{customdata[0]}<br>Yıl: %{customdata[1]}"
-        "<br>Metrik: %{customdata[2]}<br>Değer: %{value:,.2f} %{customdata[3]}"
-        "<br>World beş-mod toplamındaki pay: %{customdata[4]:.2f}%"
+        "Vehicle type / scope: %{customdata[0]}<br>Year: %{customdata[1]}"
+        "<br>Metric: %{customdata[2]}<br>Value: %{value:,.2f} %{customdata[3]}"
+        "<br>Share of World total (five vehicle modes): %{customdata[4]:.2f}%"
         "<extra></extra>"
     )
     fig.update_layout(
-        title=f"05 · {year} Dünya | {label} ({unit})",
+        title=f"05 · {year} World | {label} ({unit})",
         template="plotly_white", height=635,
         font=dict(family="Arial", size=12),
         margin=dict(l=40, r=40, t=100, b=65),
@@ -107,7 +107,7 @@ def build_energy_treemap(
     zero_modes = data.loc[data["value"].eq(0), "mode"].tolist()
     if zero_modes:
         fig.add_annotation(
-            text="Sıfır değer (alan yok): " + ", ".join(zero_modes),
+            text="Zero value (no area): " + ", ".join(zero_modes),
             x=0, y=-0.07, xref="paper", yref="paper",
             showarrow=False, xanchor="left",
         )

@@ -51,6 +51,12 @@ class TreemapTests(unittest.TestCase):
                 self.assertIn("World", trace.parents)
                 self.assertFalse(fig.layout.updatemenus)
                 self.assertIn(METRICS[metric][1], fig.layout.title.text)
+                self.assertEqual(fig.layout.title.text,
+                                 f"05 · 2025 World | {METRICS[metric][0]} ({METRICS[metric][1]})")
+                self.assertEqual(dict(zip(trace.ids, trace.marker.colors))["World"], "#FFD700")
+                for label in ["Vehicle type / scope:", "Year:", "Metric:", "Value:",
+                              "Share of World total (five vehicle modes):"]:
+                    self.assertIn(label, trace.hovertemplate)
                 fig.to_json()
         pd.testing.assert_frame_equal(df, original)
 
@@ -92,7 +98,7 @@ class TreemapTests(unittest.TestCase):
         df = fixture()
         df.loc[0, "value"] = 0
         fig = build_energy_treemap(df)
-        self.assertIn("Cars", fig.layout.annotations[0].text)
+        self.assertEqual(fig.layout.annotations[0].text, "Zero value (no area): Cars")
         self.assertEqual(dict(zip(fig.data[0].labels, fig.data[0].values))["Cars"], 0)
         df["value"] = 0
         self.assertIsNone(build_energy_treemap(df))
