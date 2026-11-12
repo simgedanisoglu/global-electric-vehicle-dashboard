@@ -1,8 +1,13 @@
-# Local development / generated files
-__pycache__/
-*.py[cod]
+# Python virtual environment
 .venv/
-venv/
-.env
-.streamlit/secrets.toml
-setup_ev_project_structure_no_notebooks.ps1
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local chart previews
+*_test.html
+
+# macOS
+.DS_Store
