@@ -8,6 +8,7 @@ from src.charts.sunburst import (
     PARAMETER_GROUPS,
     build_sunburst,
 )
+from src.ui.theme import apply_dashboard_theme
 
 
 DATA_PATH = (
@@ -22,6 +23,8 @@ DATA_PATH = (
 def load_data():
     return pd.read_csv(DATA_PATH)
 
+
+apply_dashboard_theme()
 
 st.title("Dataset Explorer")
 st.write(

@@ -20,6 +20,8 @@ from src.charts.violin import (
 from src.charts.treemap import build_energy_treemap, METRICS
 from src.charts.diverging_heatmap import build_scenario_heatmap
 
+from src.ui.theme import apply_dashboard_theme
+
 DATA_PATH = (
     Path(__file__).resolve().parents[1]
     / "data"
@@ -44,6 +46,8 @@ SCENARIO_PATH = (
 def load_scenario_data():
     return pd.read_csv(SCENARIO_PATH)
 
+
+apply_dashboard_theme()
 
 st.title("Research & Insights")
 
