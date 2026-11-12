@@ -1,623 +1,285 @@
-import streamlit as st
-
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
+import streamlit as st
 
-from src.charts.rank_dumbbell import build_rank_dumbbell
-from src.charts.sankey import build_energy_transition_sankey
 from src.charts.connected_scatter import build_market_connected_scatter
-from src.charts.parallel_coordinates import build_ev_mode_pcp
-from src.charts.splom import (
-    build_charging_splom,
-    prepare_charging_splom_data,
-)
-from src.charts.violin import (
-    PRICE_SEGMENTS,
-    build_price_violin,
-    prepare_price_violin_data,
-)
-from src.charts.treemap import build_energy_treemap, METRICS
 from src.charts.diverging_heatmap import build_scenario_heatmap
+from src.charts.parallel_coordinates import build_ev_mode_pcp
+from src.charts.rank_dumbbell import build_rank_dumbbell, prepare_rank_dumbbell_data
+from src.charts.sankey import build_energy_transition_sankey, prepare_energy_transition_data
+from src.charts.splom import build_charging_splom, prepare_charging_splom_data
+from src.charts.treemap import METRICS, build_energy_treemap
+from src.charts.violin import PRICE_SEGMENTS, build_price_violin, prepare_price_violin_data
+from src.ui.theme import card_header, card_result, card_plot
 
-DATA_PATH = (
-    Path(__file__).resolve().parents[1]
-    / "data"
-    / "analysisdataset"
-    / "global_ev_cleaned.csv"
-)
+
+DATA_DIR = Path(__file__).resolve().parents[1] / "data" / "analysisdataset"
 
 
 @st.cache_data
 def load_data():
-    return pd.read_csv(DATA_PATH)
-
-SCENARIO_PATH = (
-    Path(__file__).resolve().parents[1]
-    / "data"
-    / "analysisdataset"
-    / "ev_2035_scenario_comparison.csv"
-)
+    return pd.read_csv(DATA_DIR / "global_ev_cleaned.csv")
 
 
 @st.cache_data
 def load_scenario_data():
-    return pd.read_csv(SCENARIO_PATH)
+    return pd.read_csv(DATA_DIR / "ev_2035_scenario_comparison.csv")
 
 
 st.title("Research & Insights")
-
-st.write(
-    "Explore global EV adoption, charging infrastructure, "
-    "vehicle prices, energy impacts, and future scenarios."
-)
-
-st.caption("Source: IEA Global EV Outlook 2026")
-
-
+st.caption("EV adoption, charging, prices, energy and scenarios · Source: IEA Global EV Outlook 2026")
 tabs = st.tabs([
-    "Market & Adoption",
-    "Charging",
-    "Prices",
-    "Energy & Impact",
-    "Future 2035",
+    "Market & Adoption", "Charging", "Prices", "Energy & Impact", "Future 2035",
 ])
-
-
+df = load_data()
 
 with tabs[0]:
-    st.subheader("Market & Adoption")
-
-   
-    st.subheader("01 · Connected Scatterplot — EV Market Evolution")
-
-    st.markdown(
-        "**Research question:** How have global EV sales volumes "
-        "and the BEV share of BEV/PHEV sales evolved together "
-        "from 2010 to 2025?"
-    )
-
-    df = load_data()
-
-    fig = build_market_connected_scatter(df)
-
-    if fig is not None:
-        st.plotly_chart(
-            fig,
-            width="stretch",
-            key="market_connected_scatter",
+    with st.container(border=False, key="chart_group_connected_scatter", gap="small"):
+        card_header(
+            "01 · Connected Scatterplot — EV Market Evolution",
+            "How did global EV sales and the BEV share of BEV/PHEV sales evolve together?",
         )
-    else:
-        st.info(
-            "No valid historical global EV sales data "
-            "is available for this visualization."
-        )
-
-    st.markdown("**How to read:**")
-    st.write(
-        "Each point represents a year. The horizontal axis "
-        "shows global electric car sales, while the vertical "
-        "axis shows the BEV percentage of combined BEV and PHEV "
-        "sales. Connecting lines follow chronological order."
-    )
-
-    st.markdown("**Key observation:**")
-    st.write(
-        "The trajectory allows us to compare growth in global "
-        "EV sales with changes in the composition of electric "
-        "vehicle technologies over time."
-    )
-
-    st.markdown("**Coverage and limitations:**")
-    st.write(
-        "Uses historical worldwide electric passenger car "
-        "sales data from 2010–2025, including only years "
-        "with comparable EV, BEV, and PHEV observations. "
-        "The figure illustrates association over time, "
-        "not a causal relationship."
-    )
-
-
-    st.divider()
-
-    st.subheader("02 · Rank Dumbbell — EV Market Rankings")
-
-    st.markdown(
-        "**Research question:** Do countries leading in "
-        "EV sales volume also lead in EV sales share?"
-    )
-
-    # Select a historical year
-    year = st.selectbox(
-        "Historical year",
-        options=list(range(2025, 2009, -1)),
-        index=0,
-        key="dumbbell_year",
-    )
-
-    df = load_data()
-
-    fig = build_rank_dumbbell(
-        df,
-        year=year,
-        top_n=12,
-    )
-
-    if fig is not None:
-        st.plotly_chart(
-            fig,
-            width="stretch",
-            key="rank_dumbbell_chart",
-        )
-    else:
-        st.info(
-            "No comparable country data is available "
-            "for the selected year."
+        with st.container(border=True, key="card_plot_market_connected_scatter"):
+            fig = build_market_connected_scatter(df)
+            insight = ""
+            scope = "Historical · World · Cars · EV sales (vehicles); BEV/(BEV+PHEV) (%)"
+            if fig is not None:
+                trace = fig.data[0]
+                insight = (
+                    f"World electric car sales were {trace.x[0]:,.0f} in {trace.text[0]} "
+                    f"and {trace.x[-1]:,.0f} in {trace.text[-1]}; the BEV share of "
+                    f"BEV/PHEV sales was {trace.y[0]:.1f}% and {trace.y[-1]:.1f}%, respectively."
+                )
+                scope += f" · {trace.text[0]}–{trace.text[-1]} · {len(trace.x)} matched years"
+            card_plot(fig, key="market_connected_scatter")
+        card_result(
+            fig, key="market_connected_scatter", insight=insight, scope=scope,
+            methodology=(
+                "Points connect chronologically; hover for year and technology values, "
+                "or use zoom/pan. Only years with valid EV, BEV and PHEV sales are included. "
+                "The BEV share is 100 × BEV/(BEV+PHEV), not a share of all car sales. "
+                "Published EV totals remain separate; temporal association is not causation."
+            ),
         )
 
-    st.markdown("**How to read:**")
-    st.write(
-        "Each country has two markers: one for its "
-        "EV sales volume ranking and another for its "
-        "EV sales share ranking. The connecting line "
-        "shows the difference between these rankings. "
-        "Rank 1 represents the highest position."
-    )
-
-    st.markdown("**Key observation:**")
-    st.write(
-        "Countries with high EV sales volumes do not "
-        "necessarily have the highest EV sales shares. "
-        "The distance between markers highlights "
-        "differences between market size and adoption."
-    )
-
-    st.markdown("**Coverage and limitations:**")
-    st.write(
-        "Historical electric passenger car data are used. "
-        "Countries are included only when both metrics "
-        "are available. Rankings are calculated across "
-        "all matched countries, while the chart displays "
-        "the top 12 countries from either ranking."
-    )
-
-    st.divider()
-
-   
-    st.subheader("07 · Parallel Coordinates — EV Adoption by Vehicle Type")
-
-    st.markdown(
-        "**Research question:** Did different vehicle types "
-        "electrify at the same pace between 2020 and 2025?"
-    )
-
-    fig = build_ev_mode_pcp(
-        df,
-        start_year=2020,
-        end_year=2025,
-    )
-
-    if fig is not None:
-        st.plotly_chart(
-            fig,
-            width="stretch",
-            key="ev_mode_pcp_chart",
+    with st.container(border=False, key="chart_group_rank_dumbbell", gap="small"):
+        card_header(
+            "02 · Rank Dumbbell — EV Market Rankings",
+            "Do countries leading in EV sales volume also lead in EV sales share?",
         )
-    else:
-        st.info(
-            "Insufficient comparable vehicle-type data "
-            "is available for the selected period."
+        with st.container(border=True, key="card_plot_rank_dumbbell_chart"):
+            year = st.selectbox(
+                "Historical year", options=list(range(2025, 2009, -1)),
+                index=0, key="dumbbell_year",
+            )
+            prepared = prepare_rank_dumbbell_data(df, year=year, top_n=12)
+            fig = build_rank_dumbbell(df, year=year, top_n=12)
+            insight = ""
+            if fig is not None:
+                leader = prepared.loc[prepared["sales_rank"].eq(1)].iloc[0]
+                insight = (
+                    f"In {year}, {leader['region_country']} ranked first in EV car sales volume "
+                    f"and had a sales-share rank of {leader['share_rank']:.0f} "
+                    f"({leader['EV sales share']:.1f}%)."
+                )
+            card_plot(fig, key="rank_dumbbell_chart")
+        card_result(
+            fig, key="rank_dumbbell_chart", insight=insight,
+            scope=f"Historical · {year} · Countries · Cars/EV · {len(prepared)} displayed countries · Rank (1 = highest)",
+            methodology=(
+                "Ranks are calculated across all countries with valid paired sales volume "
+                "and sales share. The display is the union of the top 12 in either ranking; "
+                "ties share a rank. Hover over either marker for country values. "
+                "World and regional aggregates are excluded."
+            ),
         )
 
-    st.markdown("**How to read:**")
-    st.write(
-        "Each colored line represents a vehicle type. "
-        "The vertical axes show EV sales shares for each year "
-        "from 2020 to 2025. Follow a line across the axes "
-        "to observe changes in its electrification rate."
-    )
-
-    st.markdown("**Interaction:**")
-    st.write(
-        "Try dragging along a vertical axis to select a "
-        "percentage range and highlight matching vehicle types. "
-        "Hover over the chart to explore its values."
-    )
-
-    st.markdown("**Key observation:**")
-    st.write(
-        "The chart allows us to compare the pace of "
-        "electrification across different vehicle types. "
-        "Changes in EV sales share are measured in "
-        "percentage points, not percentage growth."
-    )
-
-    st.markdown("**Coverage and limitations:**")
-    st.write(
-        "The chart uses historical worldwide EV sales-share "
-        "data for 2020–2025. Only vehicle types with complete "
-        "observations across the period are included. "
-        "The visualization describes new vehicle sales "
-        "rather than the entire vehicle fleet."
-    )
-
-
-    st.write(
-        "01 · Connected Scatterplot"
-    )
-
-    st.write(
-        "02 · Rank Dumbbell"
-    )
-
-    st.write(
-        "07 · Parallel Coordinates"
-    )
-
+    with st.container(border=False, key="chart_group_pcp", gap="small"):
+        card_header(
+            "07 · Parallel Coordinates — EV Adoption by Vehicle Type",
+            "Did different vehicle types electrify at the same pace between 2020 and 2025?",
+        )
+        with st.container(border=True, key="card_plot_ev_mode_pcp_chart"):
+            fig = build_ev_mode_pcp(df, start_year=2020, end_year=2025)
+            insight = ""
+            scope = "Historical · 2020–2025 · World · EV sales share (%)"
+            if fig is not None:
+                changes = fig.layout.meta["change_pp"]
+                maximum = max(changes.values())
+                leaders = ", ".join(mode for mode, change in changes.items() if change == maximum)
+                insight = f"{leaders} recorded the largest EV sales-share change from 2020 to 2025 ({maximum:+.1f} percentage points)."
+                scope += f" · {len(changes)} complete vehicle types"
+            card_plot(fig, key="ev_mode_pcp_chart")
+        card_result(
+            fig, key="ev_mode_pcp_chart", insight=insight, scope=scope,
+            methodology=(
+                "Each line is a vehicle type with complete annual observations. "
+                "Drag a range on an axis to brush matching profiles; clear the range to reset. "
+                "Share changes are percentage points, not percentage growth. "
+                "These shares describe new sales, not the entire fleet. "
+                "Incomplete vehicle types are excluded."
+            ),
+        )
 
 with tabs[1]:
-    st.subheader("Charging Infrastructure")
-
-    st.subheader("03 · Scatterplot Matrix — EV Stock and Charging")
-
-    st.markdown(
-        "**Research question:** Are larger electric car fleets "
-        "associated with more public charging points?"
-    )
-
-    df = load_data()
-    year = 2025
-
-    prepared = prepare_charging_splom_data(df, year=year)
-
-    fig = build_charging_splom(df, year=year)
-
-    if fig is not None:
-        st.plotly_chart(
-            fig,
-            width="stretch",
-            key="charging_splom_chart",
+    with st.container(border=False, key="chart_group_splom", gap="small"):
+        card_header(
+            "03 · Scatterplot Matrix — EV Stock and Charging",
+            "Are larger electric car fleets associated with more public charging points?",
         )
-
-        st.caption(
-            f"Year: {year} | "
-            f"Countries with complete observations: {len(prepared)}"
+        with st.container(border=True, key="card_plot_charging_splom_chart"):
+            prepared = prepare_charging_splom_data(df, year=2025)
+            fig = build_charging_splom(df, year=2025)
+            insight = ""
+            if fig is not None:
+                rho = fig.layout.meta["spearman_ev_stock_public_chargers"]
+                insight = (
+                    f"Across {len(prepared)} matched countries, EV car stock and public charging "
+                    f"points have a Spearman rank correlation of {rho:.2f}."
+                    if np.isfinite(rho) else
+                    "Rank correlation is undefined because one of the matched metrics is constant."
+                )
+            card_plot(fig, key="charging_splom_chart")
+        card_result(
+            fig, key="charging_splom_chart", insight=insight,
+            scope=f"Historical · 2025 · {len(prepared)} complete countries · Cars/EV · Stock and public charging points",
+            methodology=(
+                "Countries must have EV stock, sales share and all three public charger "
+                "types (slow, fast, ultra-fast). Missing records are not zero. Stock and "
+                "charger counts use log10 scales; hover for original values and use box/lasso "
+                "selection across panels. Cars per point is an approximate ratio. "
+                "Correlation does not establish causation."
+            ),
         )
-    else:
-        st.info(
-            "No comparable charging infrastructure data "
-            "is available for the selected year."
-        )
-
-    st.markdown("**How to read:**")
-    st.write(
-        "Each point represents a country. The matrix compares "
-        "electric car stock, public charging points, "
-        "electric cars per public charging point, "
-        "and EV sales share. Stock and charging-point "
-        "counts are displayed on logarithmic scales."
-    )
-
-    st.markdown("**Interaction:**")
-    st.write(
-        "Hover over points to inspect country values. "
-        "Use box or lasso selection to explore "
-        "groups of countries across the matrix."
-    )
-
-    st.markdown("**Key observation:**")
-    st.write(
-        "The matrix helps investigate whether countries "
-        "with larger electric car fleets also have "
-        "more public charging infrastructure. "
-        "An observed relationship does not establish causation."
-    )
-
-    st.markdown("**Coverage and limitations:**")
-    st.write(
-        "Uses 2025 historical country-level observations. "
-        "Only countries with the required EV stock, "
-        "sales-share, and public charging categories "
-        "are included. Missing charging records "
-        "are not treated as zero."
-    )
-
-
-
 
 with tabs[2]:
-    st.subheader("Vehicle Prices")
-
-    st.subheader("04 · Violin Plot — BEV vs ICEV Price Gaps")
-
-    st.markdown(
-        "**Research question:** How does the BEV–ICEV "
-        "median price gap vary across vehicle segments "
-        "and countries?"
-    )
-
-    # Select vehicle segments
-    selected_segments = st.multiselect(
-        "Vehicle segments",
-        options=list(PRICE_SEGMENTS),
-        default=list(PRICE_SEGMENTS),
-        key="violin_segments",
-    )
-
-    df = load_data()
-
-    prepared = prepare_price_violin_data(
-        df,
-        segments=selected_segments,
-        year=2025,
-    )
-
-    fig = build_price_violin(
-        df,
-        segments=selected_segments,
-        year=2025,
-    )
-
-    if fig is not None:
-        st.plotly_chart(
-            fig,
-            width="stretch",
-            key="price_violin_chart",
+    with st.container(border=False, key="chart_group_violin", gap="small"):
+        card_header(
+            "04 · Violin Plot — BEV vs ICEV Price Gaps",
+            "How does the BEV–ICEV median price gap vary across segments and countries?",
         )
-
-        st.caption(
-            f"Year: 2025 | "
-            f"Country–segment observations: {len(prepared)} | "
-            f"Countries: {prepared['region_country'].nunique()}"
+        with st.container(border=True, key="card_plot_price_violin_chart"):
+            selected_segments = st.multiselect(
+                "Vehicle segments", options=list(PRICE_SEGMENTS),
+                default=list(PRICE_SEGMENTS), key="violin_segments",
+            )
+            prepared = prepare_price_violin_data(df, segments=selected_segments, year=2025)
+            fig = build_price_violin(df, segments=selected_segments, year=2025)
+            insight = ""
+            if fig is not None:
+                below = prepared["price_gap_pct"].lt(0).sum()
+                insight = (
+                    f"BEV median prices are below ICEV medians in {below} of "
+                    f"{len(prepared)} selected country–segment pairs; the median "
+                    f"gap across these pairs is {prepared['price_gap_pct'].median():+.1f}%."
+                )
+            card_plot(fig, key="price_violin_chart")
+        card_result(
+            fig, key="price_violin_chart", insight=insight,
+            scope=(f"Historical · 2025 · {prepared['region_country'].nunique()} countries · "
+                   f"{len(prepared)} country–segment pairs · Gap (%) from 2025 USD medians"),
+            methodology=(
+                "Gap = 100 × (BEV median − ICEV median)/ICEV median, using paired positive "
+                "country–segment prices in constant 2025 USD. Positive values indicate a BEV "
+                "premium. These are country-level median gaps, not individual car prices; "
+                "small samples may yield unstable densities. Select segments, hover over "
+                "country points, or zoom to inspect distributions."
+            ),
         )
-    else:
-        st.info(
-            "No comparable BEV and ICEV median-price "
-            "observations are available for the selected segments."
-        )
-
-    st.markdown("**How to read:**")
-    st.write(
-        "Each violin summarizes the distribution of country-level "
-        "BEV–ICEV median price gaps for one vehicle segment. "
-        "Individual points represent country–segment observations. "
-        "Wider sections indicate a higher concentration of observations."
-    )
-
-    st.markdown("**Interaction:**")
-    st.write(
-        "Select one or more vehicle segments to update the chart. "
-        "Hover over points to inspect country-level price gaps. "
-        "Use Plotly zoom to examine the distribution."
-    )
-
-    st.markdown("**Key observation:**")
-    st.write(
-        "Compare the shape and spread of the distributions "
-        "to identify how price gaps differ across vehicle segments. "
-        "Positive values mean BEVs have a higher median price "
-        "than comparable ICEVs; negative values mean BEVs "
-        "have a lower median price."
-    )
-
-    st.markdown("**Coverage and limitations:**")
-    st.write(
-        "Uses 2025 historical country-level median prices "
-        "expressed in constant 2025 USD. "
-        "Only country–segment pairs with valid prices for "
-        "both BEVs and ICEVs are included. "
-        "These are distributions of country-level percentage "
-        "gaps, not distributions of individual vehicle prices."
-    )
-
-
-
 
 with tabs[3]:
-    st.subheader("Energy & Environmental Impact")
-
-    
-    st.subheader("05 · Treemap — Global EV Energy Impacts")
-
-    st.markdown(
-        "**Research question:** Which vehicle types contribute "
-        "most to global EV-related energy demand, battery "
-        "deployment, and oil displacement?"
-    )
-
-    # Select one energy metric
-    selected_metric = st.selectbox(
-        "Energy impact metric",
-        options=list(METRICS.keys()),
-        format_func=lambda metric: METRICS[metric][0],
-        key="treemap_metric",
-    )
-
-    fig = build_energy_treemap(
-        df=load_data(),
-        metric=selected_metric,
-        year=2025,
-    )
-
-    if fig is not None:
-        st.plotly_chart(
-            fig,
-            width="stretch",
-            key="energy_treemap_chart",
+    with st.container(border=False, key="chart_group_treemap", gap="small"):
+        card_header(
+            "05 · Treemap — Global EV Energy Impacts",
+            "Which vehicle types contribute most to oil displacement, battery deployment and electricity demand?",
+        )
+        with st.container(border=True, key="card_plot_energy_treemap_chart"):
+            selected_metric = st.selectbox(
+                "Energy impact metric", options=list(METRICS),
+                format_func=lambda metric: METRICS[metric][0], key="treemap_metric",
+            )
+            fig = build_energy_treemap(df, metric=selected_metric, year=2025)
+            insight = ""
+            if fig is not None:
+                trace = fig.data[0]
+                leaves = [(label, float(value)) for label, parent, value in
+                          zip(trace.labels, trace.parents, trace.values) if parent == "World"]
+                maximum = max(value for _, value in leaves)
+                leaders = ", ".join(label for label, value in leaves if value == maximum)
+                share = 100 * maximum / sum(value for _, value in leaves)
+                tie_note = " each" if sum(value == maximum for _, value in leaves) > 1 else ""
+                insight = f"{leaders} lead in {METRICS[selected_metric][0].lower()}, contributing {share:.1f}%{tie_note} of the five-mode total."
+            card_plot(fig, key="energy_treemap_chart")
+        card_result(
+            fig, key="energy_treemap_chart", insight=insight,
+            scope=f"Historical · 2025 · World · EV · 5 vehicle types · {METRICS[selected_metric][0]} · {METRICS[selected_metric][1]}",
+            methodology=(
+                "Areas represent one selected metric across cars, buses, trucks, vans "
+                "and two/three-wheelers. The denominator is the sum of these five World "
+                "mode records, not World plus countries. Different metrics and units are "
+                "never added together. Zero modes have no visible area. Change the metric, "
+                "hover for values and shares, or click to drill down and return via the parent."
+            ),
         )
 
-        st.caption(
-            f"Year: 2025 | Scope: World | "
-            f"Metric: {METRICS[selected_metric][0]} | "
-            f"Unit: {METRICS[selected_metric][1]}"
+    with st.container(border=False, key="chart_group_sankey", gap="small"):
+        card_header(
+            "06 · Sankey — Energy Demand Transition",
+            "How did countries transition between electricity-demand-per-EV levels from 2020 to 2025?",
         )
-    else:
-        st.info(
-            "No complete energy impact data is available "
-            "for the selected metric."
+        with st.container(border=True, key="card_plot_energy_sankey_chart"):
+            prepared, thresholds = prepare_energy_transition_data(df, start_year=2020, end_year=2025)
+            fig = build_energy_transition_sankey(df, start_year=2020, end_year=2025)
+            insight = ""
+            if fig is not None:
+                unchanged = prepared["start_level"].eq(prepared["end_level"]).sum()
+                insight = f"{unchanged} of {len(prepared)} matched countries remained in the same demand-per-EV category; {len(prepared) - unchanged} changed category between 2020 and 2025."
+            card_plot(fig, key="energy_sankey_chart")
+        card_result(
+            fig, key="energy_sankey_chart", insight=insight,
+            scope=f"Historical · 2020 → 2025 · {len(prepared)} matched countries · Cars/EV · Flows = country counts",
+            methodology=(
+                "Approximate annual demand per EV = electricity demand (GWh) × 1,000,000 "
+                "/ year-end EV stock. Low/Medium/High use shared pooled tercile thresholds "
+                "for both years, not official IEA categories. Only valid country pairs "
+                "are included. Flow widths count countries, not energy volumes. Hover for "
+                "transition details; drag nodes to rearrange."
+            ),
         )
-
-    st.markdown("**How to read:**")
-    st.write(
-        "Each rectangle represents a vehicle type. "
-        "Its area is proportional to that vehicle type's "
-        "contribution to the selected global energy metric. "
-        "Click a rectangle to explore the hierarchy."
-    )
-
-    st.markdown("**Interaction:**")
-    st.write(
-        "Select a metric to update the Treemap. "
-        "Hover over rectangles to inspect their values "
-        "and percentage contributions. "
-        "Click a vehicle type to zoom into it."
-    )
-
-    st.markdown("**Key observation:**")
-    st.write(
-        "Compare rectangle sizes to identify which vehicle "
-        "types contribute the largest shares of the selected "
-        "global energy metric."
-    )
-
-    st.markdown("**Coverage and limitations:**")
-    st.write(
-        "Uses 2025 historical worldwide EV data for five "
-        "vehicle types: cars, buses, trucks, vans, and "
-        "two- and three-wheelers. "
-        "Only one metric and its corresponding unit are "
-        "displayed at a time. The chart does not combine "
-        "oil displacement, battery deployment, and "
-        "electricity demand into a single total."
-    )
-
-    st.divider()
-
-    st.subheader("06 · Sankey — Energy Demand Transition")
-
-    st.markdown(
-        "**Research question:** How did countries transition "
-        "between electricity-demand-per-EV levels "
-        "from 2020 to 2025?"
-    )
-
-    df = load_data()
-
-    fig = build_energy_transition_sankey(
-        df,
-        start_year=2020,
-        end_year=2025,
-    )
-
-    if fig is not None:
-        st.plotly_chart(
-            fig,
-            width="stretch",
-            key="energy_sankey_chart",
-        )
-    else:
-        st.info(
-            "No comparable country data is available "
-            "for the selected years."
-        )
-
-    st.markdown("**How to read:**")
-    st.write(
-        "Each flow connects a country's electricity-demand-"
-        "per-EV category in 2020 to its category in 2025. "
-        "The thickness of each flow represents the number "
-        "of countries following that transition."
-    )
-
-    st.markdown("**Key observation:**")
-    st.write(
-        "Countries can remain within the same category "
-        "or move between Low, Medium, and High levels. "
-        "These relative categories help summarize "
-        "changes in electricity demand per EV."
-    )
-
-    st.markdown("**Coverage and limitations:**")
-    st.write(
-        "Only countries with valid electric passenger car "
-        "stock and electricity-demand data in both years "
-        "are included. Categories are defined using "
-        "quantile thresholds, not official IEA categories. "
-        "The ratio is an approximation based on year-end "
-        "EV stock, not measured electricity consumption "
-        "per individual vehicle."
-    )
-
-
-
 
 with tabs[4]:
-    st.subheader("Future Outlook 2035")
-
-    st.subheader(
-        "08 · Diverging Heatmap — 2035 Scenario Comparison"
-    )
-
-    st.markdown(
-        "**Research question:** Where are the largest relative "
-        "differences between the STEPS and CPS scenarios "
-        "across EV indicators and geographies in 2035?"
-    )
-
-    # Load the 2035 scenario comparison dataset
-    scenario_df = load_scenario_data()
-
-    fig = build_scenario_heatmap(scenario_df)
-
-    if fig is not None:
-        st.plotly_chart(
-            fig,
-            width="stretch",
-            key="scenario_heatmap_chart",
+    with st.container(border=False, key="chart_group_heatmap", gap="small"):
+        card_header(
+            "08 · Diverging Heatmap — 2035 Scenario Comparison",
+            "Where are the largest relative STEPS–CPS differences across indicators and geographies in 2035?",
         )
-
-        st.caption(
-            "Year: 2035 | Scenarios: STEPS vs CPS | "
-            "Measure: Relative difference (%)"
+        with st.container(border=True, key="card_plot_scenario_heatmap_chart"):
+            fig = build_scenario_heatmap(load_scenario_data())
+            insight = ""
+            scope = "Projection · 2035 · STEPS vs CPS · Relative difference (%)"
+            if fig is not None:
+                trace = fig.data[0]
+                values = np.asarray(trace.z, dtype=float)
+                largest = np.nanmax(np.abs(values))
+                positions = np.argwhere(np.abs(values) == largest)
+                row, column = positions[0]
+                tie_note = f" (tied across {len(positions)} cells)" if len(positions) > 1 else ""
+                insight = (
+                    f"{trace.x[column]} · {trace.y[row]} has the largest absolute relative "
+                    f"scenario difference ({values[row, column]:+.1f}% versus CPS){tie_note}."
+                )
+                scope += f" · {len(trace.y)} indicators × {len(trace.x)} geographies · {np.isfinite(values).sum()} valid cells"
+            card_plot(fig, key="scenario_heatmap_chart")
+        card_result(
+            fig, key="scenario_heatmap_chart", insight=insight, scope=scope,
+            methodology=(
+                "Relative difference = 100 × (STEPS − CPS)/abs(CPS), using paired 2035 "
+                "projections. Colors diverge around zero; missing values and CPS=0 are "
+                "undefined, not zero. Hover for scenario values and units. Even for sales "
+                "shares, differences are relative percentages, not percentage points. "
+                "Small CPS baselines can amplify percentages. Countries, regions and World "
+                "are compared separately and never summed; these are not historical outcomes."
+            ),
         )
-    else:
-        st.info(
-            "No comparable 2035 CPS and STEPS scenario "
-            "observations are available."
-        )
-
-    st.markdown("**How to read:**")
-    st.write(
-        "Each cell compares the STEPS and CPS projections "
-        "for one EV indicator and geography. "
-        "The diverging color scale is centered at zero: "
-        "positive values indicate higher STEPS projections, "
-        "while negative values indicate lower projections."
-    )
-
-    st.markdown("**Interaction:**")
-    st.write(
-        "Hover over cells to inspect the scenario values "
-        "and relative percentage differences."
-    )
-
-    st.markdown("**Key observation:**")
-    st.write(
-        "The heatmap highlights where the STEPS and CPS "
-        "projections differ most strongly relative to "
-        "the CPS baseline. Compare color intensity "
-        "across indicators and geographies to identify "
-        "areas of larger scenario divergence."
-    )
-
-    st.markdown("**Coverage and limitations:**")
-    st.write(
-        "The visualization uses paired CPS and STEPS "
-        "projections for 2035, not historical observations. "
-        "Relative differences are calculated as "
-        "100 × (STEPS − CPS) / |CPS|. "
-        "Missing values and zero CPS baselines produce "
-        "undefined differences rather than zero. "
-        "Countries, regions, and World are compared "
-        "individually and are not summed."
-    )

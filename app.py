@@ -1,6 +1,8 @@
 
 import streamlit as st
 
+from src.ui.theme import apply_theme, render_theme_selector
+
 st.set_page_config(
     page_title="Global EV Transition",
     page_icon="⚡",
@@ -26,5 +28,8 @@ navigation = st.navigation(
     pages,
     position="top",
 )
+
+apply_theme()
+render_theme_selector()
 
 navigation.run()
