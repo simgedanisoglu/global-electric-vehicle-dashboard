@@ -20,9 +20,11 @@ pages = [
         "pages/2_Research_Insights.py",
         title="Research & Insights",
     ),
+    st.Page(
+        "pages/3_ML_Insights.py",
+        title="ML Insights",
+    ),
 ]
-
-# Add the ML page when it is ready.
 
 navigation = st.navigation(
     pages,
