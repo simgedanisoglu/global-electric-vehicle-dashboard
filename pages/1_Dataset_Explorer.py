@@ -20,6 +20,17 @@ def load_data():
     return pd.read_csv(DATA_PATH)
 
 
+# Page-local tweak: tighter top clearance than the shared theme, this page only.
+st.markdown(
+    """<style>
+    .stMainBlockContainer { padding-top: 4.25rem; }
+    @media (max-width: 1099px) { .stMainBlockContainer { padding-top: 7.25rem; } }
+    /* The style holder itself must not add a flex gap above the title. */
+    .stMainBlockContainer [data-testid="stElementContainer"]:has(> [data-testid="stMarkdown"] style) { display: none; }
+    </style>""",
+    unsafe_allow_html=True,
+)
+
 st.title("Dataset Explorer")
 st.caption("Explore the dataset hierarchy · Source: IEA Global EV Outlook 2026")
 

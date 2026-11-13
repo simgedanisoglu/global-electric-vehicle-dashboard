@@ -68,13 +68,14 @@ def apply_theme():
             background: #237A52;
         }
         [data-testid="stTopNav"] { max-width: calc(100% - 23rem); }
+        .stMainBlockContainer { padding-top: 5rem; }
         @media (max-width: 1099px) {
             /* A second header row keeps both navigation and switch usable. */
             [data-testid="stHeader"] { height: 112px; align-items: flex-start; }
             [data-testid="stToolbar"] { height: 60px; }
             [data-testid="stTopNav"] { max-width: 100%; align-self: flex-start; }
             .st-key-theme_controls { top: 64px; right: 1rem; }
-            .stMainBlockContainer { padding-top: 9rem; }
+            .stMainBlockContainer { padding-top: 7.5rem; }
         }
         [data-testid="stTopNavLink"], [data-testid="stTopNavDropdownLink"] {
             text-transform: uppercase;
