@@ -33,7 +33,8 @@ class DivergingHeatmapTests(unittest.TestCase):
         self.assertEqual(list(trace.x), ["China", "Europe", "India", "Japan", "Korea",
                                         "Latin America", "Southeast Asia", "USA", "World"])
         self.assertEqual(list(trace.y), [m[3] for m in SCENARIO_METRICS])
-        z = np.asarray(trace.z, dtype=float)
+        z = np.asarray(trace.customdata[:, :, 7], dtype=float)
+        np.testing.assert_allclose(trace.z, np.sign(z) * np.log1p(np.abs(z) / 5))
         self.assertEqual(z.shape, (9, 9))
         self.assertEqual(int(np.isfinite(z).sum()), 81)
         self.assertEqual((int((z > 0).sum()), int((z == 0).sum()), int((z < 0).sum())), (62, 9, 10))
@@ -50,8 +51,8 @@ class DivergingHeatmapTests(unittest.TestCase):
                 self.assertEqual(list(trace.customdata[i, j, :4]), [parameter, mode, pt, unit])
                 self.assertEqual(trace.customdata[i, j, 4], row["Projection-CPS"])
                 self.assertEqual(trace.customdata[i, j, 5], row["Projection-STEPS"])
-        self.assertEqual(fig.layout.coloraxis.cmin, -400)
-        self.assertEqual(fig.layout.coloraxis.cmax, 400)
+        self.assertEqual(fig.layout.coloraxis.cmin, -np.log1p(400 / 5))
+        self.assertEqual(fig.layout.coloraxis.cmax, np.log1p(400 / 5))
         self.assertEqual(len(fig.data), 1)
         fig.to_json()
         pd.testing.assert_frame_equal(sc, original)
@@ -64,9 +65,10 @@ class DivergingHeatmapTests(unittest.TestCase):
         self.assertEqual([c for _, c in actual], [c for _, c in expected])
         np.testing.assert_allclose([v for v, _ in actual], [v for v, _ in expected])
         self.assertEqual(fig.layout.coloraxis.cmid, 0)
-        self.assertEqual(fig.layout.coloraxis.cmin, -50)
-        self.assertEqual(fig.layout.coloraxis.cmax, 50)
-        self.assertEqual(fig.layout.coloraxis.colorbar.title.text, "STEPS − CPS (%)")
+        self.assertEqual(fig.layout.coloraxis.cmin, -np.log1p(50 / 5))
+        self.assertEqual(fig.layout.coloraxis.cmax, np.log1p(50 / 5))
+        self.assertEqual(fig.layout.coloraxis.colorbar.title.text,
+                         "STEPS − CPS (%)")
         self.assertEqual(fig.layout.xaxis.title.text, "Geography")
         self.assertEqual(fig.layout.yaxis.title.text, "Indicator / vehicle")
         self.assertEqual(fig.layout.yaxis.autorange, "reversed")
@@ -134,6 +136,36 @@ class DivergingHeatmapTests(unittest.TestCase):
         np.testing.assert_array_equal(build_scenario_heatmap(sc).data[0].z,
                                       build_scenario_heatmap(combined).data[0].z)
 
+    def test_signed_log_symmetry_ticks_and_original_hover(self):
+        sc = fixture()
+        differences = np.array([-400, -50, -20, -10, -5, -2, 0, 2, 5,
+                                10, 20, 50, 400, 7, -7, 1, -1, 0.0])
+        sc["Projection-CPS"] = 100.0
+        sc["Projection-STEPS"] = 100.0 + differences
+        fig = build_scenario_heatmap(sc)
+        trace = fig.data[0]
+        original = np.asarray(trace.customdata[:, :, 7], dtype=float)
+        expected = np.sign(original) * np.log1p(np.abs(original) / 5)
+        np.testing.assert_allclose(trace.z, expected)
+        for d in (2, 5, 10, 20, 50, 400):
+            positive = np.asarray(trace.z)[np.isclose(original, d)][0]
+            negative = np.asarray(trace.z)[np.isclose(original, -d)][0]
+            self.assertAlmostEqual(positive, -negative)
+        self.assertEqual(fig.layout.coloraxis.cmin, -fig.layout.coloraxis.cmax)
+        bar = fig.layout.coloraxis.colorbar
+        ticks = np.array([-400, -100, -20, -5, 0, 5, 20, 100, 400])
+        self.assertEqual(list(bar.ticktext), [f"{v}%" for v in ticks])
+        np.testing.assert_allclose(bar.tickvals, np.sign(ticks) * np.log1p(abs(ticks) / 5))
+        self.assertEqual(bar.title.text, "STEPS − CPS (%)")
+        self.assertIn("%{customdata[7]:.2f}%", trace.hovertemplate)
+        self.assertNotIn("%{z", trace.hovertemplate)
+        self.assertEqual(fig.layout.title.text,
+                         "08 \u00b7 2035 | STEPS\u2013CPS relative differences by indicator (%)")
+        # A nonstandard maximum must retain truthful, symmetric endpoint labels.
+        sc["Projection-STEPS"] = 107.0
+        bar = build_scenario_heatmap(sc).layout.coloraxis.colorbar
+        self.assertEqual(list(bar.ticktext), ["-7%", "-5%", "0%", "5%", "7%"])
+
     def test_invalid_data(self):
         sc = fixture()
         with self.assertRaisesRegex(ValueError, "Duplicate"):
@@ -157,12 +189,13 @@ class DivergingHeatmapTests(unittest.TestCase):
         sc["Projection-STEPS"] = 20.2
         sc.loc[sc.parameter.eq("EV sales share"), "Projection-CPS"] = 20
         fig = build_scenario_heatmap(sc)
-        np.testing.assert_allclose(fig.data[0].z, 1)  # 1%, not 0.2 percentage points.
-        self.assertEqual(fig.layout.coloraxis.cmin, -5)
-        self.assertEqual(fig.layout.coloraxis.cmax, 5)
+        np.testing.assert_allclose(fig.data[0].customdata[:, :, 7].astype(float), 1)
+        np.testing.assert_allclose(fig.data[0].z, np.log1p(1 / 5))  # 1%, not 0.2 percentage points.
+        self.assertEqual(fig.layout.coloraxis.cmin, -np.log(2))
+        self.assertEqual(fig.layout.coloraxis.cmax, np.log(2))
         sc["Projection-CPS"] = -20
         sc["Projection-STEPS"] = -10
-        np.testing.assert_allclose(build_scenario_heatmap(sc).data[0].z, 50)
+        np.testing.assert_allclose(build_scenario_heatmap(sc).data[0].customdata[:, :, 7].astype(float), 50)
         sc["Projection-CPS"] = sc["Projection-STEPS"] = 20
         fig = build_scenario_heatmap(sc)
         np.testing.assert_array_equal(fig.data[0].z, 0)
