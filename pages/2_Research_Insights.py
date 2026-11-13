@@ -280,6 +280,8 @@ with tabs[4]:
                 "undefined, not zero. Hover for scenario values and units. Even for sales "
                 "shares, differences are relative percentages, not percentage points. "
                 "Small CPS baselines can amplify percentages. Countries, regions and World "
-                "are compared separately and never summed; these are not historical outcomes."
+                "are compared separately and never summed; these are not historical outcomes. "
+                "Colors use a symmetric signed-log scale to improve the visibility of smaller differences. "
+                "Hover values show the original percentages."
             ),
         )
