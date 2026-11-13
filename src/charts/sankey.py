@@ -183,6 +183,23 @@ def build_energy_transition_sankey(
             f"<br>Countries: {names}"
         )
 
+
+    # Count countries for each node
+    node_counts = [0] * len(labels)
+
+    for source, target, value in zip(sources, targets, values):
+        node_counts[source] += int(value)
+        node_counts[target] += int(value)
+
+
+    
+    # Count countries for each node
+    node_counts = [0] * len(labels)
+
+    for source, target, value in zip(sources, targets, values):
+        node_counts[source] += int(value)
+        node_counts[target] += int(value)
+
     fig = go.Figure(
         go.Sankey(
             arrangement="snap",
@@ -192,6 +209,12 @@ def build_energy_transition_sankey(
                 pad=22,
                 thickness=22,
                 line=dict(color="white", width=1),
+                customdata=node_counts,
+                hovertemplate=(
+                    "<b>%{label}</b>"
+                    "<br>Country count: %{customdata}"
+                    "<extra></extra>"
+                ),
             ),
             link=dict(
                 source=sources,
@@ -201,12 +224,13 @@ def build_energy_transition_sankey(
                 customdata=customdata,
                 hovertemplate=(
                     "%{customdata}"
-                    "<br>Country count: %{value}"
+                    "<br>Country count: %{value:.0f}"
                     "<extra></extra>"
                 ),
             ),
         )
     )
+
 
     q1, q2 = thresholds
 
