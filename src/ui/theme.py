@@ -23,25 +23,62 @@ def _store_theme_choice():
     )
 
 
-def render_theme_selector():
-    """Keep the persisted preference independent of widget lifecycle cleanup."""
-    st.session_state.setdefault("ev_theme_mode", "Light")
-    st.session_state["_ev_light_switch"] = st.session_state["ev_theme_mode"] == "Light"
-    with st.container(
-        horizontal=True, vertical_alignment="center", gap="small",
-        width="content", key="theme_controls",
-    ):
-        st.markdown("Dark")
-        st.toggle(
-            "Light", key="_ev_light_switch", on_change=_store_theme_choice,
-            width="content",
-        )
 
+def render_theme_selector():
+    """Render the theme switch."""
+
+    st.session_state.setdefault("ev_theme_mode", "Light")
+    st.session_state["_ev_light_switch"] = (
+        st.session_state["ev_theme_mode"] == "Light"
+    )
+
+    with st.container(
+        horizontal=True,
+        vertical_alignment="center",
+        width="content",
+        key="theme_controls",
+    ):
+        st.toggle(
+            "Theme",
+            label_visibility="collapsed",
+            key="_ev_light_switch",
+            on_change=_store_theme_choice,
+        )
 
 def apply_theme():
     """Style the application shell without changing chart color semantics."""
+    
     st.markdown(
         """<style>
+
+                /* Align labels directly beside the switch */
+        .st-key-theme_controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 190px !important;
+            min-width: 190px;
+        }
+
+        .st-key-theme_controls label:has(input[role="switch"]) {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .st-key-theme_controls label:has(input[role="switch"])::before {
+            content: "Dark";
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .st-key-theme_controls label:has(input[role="switch"])::after {
+            content: "Light";
+            font-size: 14px;
+            font-weight: 500;
+        }
         .stApp { background: #DCEBDD; color: #243b35; }
         [data-testid="stHeader"], [data-testid="stTopNav"] {
             background: #9FC9AC;
@@ -49,8 +86,8 @@ def apply_theme():
         /* Only our keyed control is positioned; native navigation stays intact. */
         .st-key-theme_controls {
             position: fixed;
-            width: 150px !important;
-            min-width: 150px;
+            width: 190px !important;
+            min-width: 190px;
             height: 40px;
             top: 10px;
             right: 12rem;
@@ -59,8 +96,40 @@ def apply_theme():
             border-radius: 999px;
             background: #9FC9AC;
             color: #155E3C;
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 8px !important;
+            flex-wrap: nowrap !important;
         }
-        .st-key-theme_controls p { margin: 0; font-size: 0.875rem; }
+        /* Prevent Streamlit from stretching the two text blocks. */
+        .st-key-theme_controls > div {
+            flex: 0 0 auto !important;
+            width: auto !important;
+            min-width: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .st-key-theme_controls p {
+            margin: 0 !important;
+            font-size: 0.875rem;
+            line-height: 1 !important;
+            white-space: nowrap;
+        }
+        .st-key-theme_controls [data-testid="stToggle"] {
+            display: flex;
+            align-items: center;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .st-key-theme_controls label {
+            margin: 0 !important;
+            padding: 0 !important;
+            display: flex;
+            align-items: center;
+        }
+
         .st-key-theme_controls label:has(input[role="switch"]) > div:not([data-testid]) {
             background: #465237;
         }
