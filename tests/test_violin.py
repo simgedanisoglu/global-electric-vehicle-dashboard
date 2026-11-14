@@ -110,6 +110,16 @@ class ViolinTests(unittest.TestCase):
         self.assertTrue(prepared["ICEV_median"].gt(0).all())
         self.assertTrue(np.isfinite(prepared["price_gap_pct"]).all())
 
+    def test_density_is_limited_to_observed_range_and_points_are_kept(self):
+        fig = build_price_violin(fixture())
+        for trace in fig.data:
+            self.assertEqual(trace.spanmode, "hard")
+            self.assertEqual(trace.points, "all")
+            self.assertTrue(trace.box.visible)
+        prepared = prepare_price_violin_data(fixture())
+        plotted = sorted(v for trace in fig.data for v in trace.y)
+        self.assertEqual(plotted, sorted(prepared["price_gap_pct"]))  # nothing dropped
+
     def test_invalid_schema_units_values_segments_and_year(self):
         with self.assertRaisesRegex(ValueError, "Missing required"):
             prepare_price_violin_data(fixture().drop(columns="unit"))

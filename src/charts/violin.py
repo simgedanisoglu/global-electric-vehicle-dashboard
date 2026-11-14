@@ -139,6 +139,9 @@ def build_price_violin(
                     "<extra></extra>"
                 ),
                 box_visible=True,
+                # Keep the density inside the observed range; a price gap cannot
+                # fall below -100%, and soft spans would draw impossible tails.
+                spanmode="hard",
                 points="all",
                 hoveron="points",
                 jitter=0.13,

@@ -11,8 +11,8 @@ from src.charts.ml_clustering import (
     summarize_clusters,
 )
 from src.charts.ml_regression import (
-    ACTUAL_COLUMN, MODELS, build_error_boxplot, prepare_regression_errors,
-    summarize_errors,
+    ACTUAL_COLUMN, MODELS, bootstrap_mae_difference, build_error_boxplot,
+    prepare_regression_errors, summarize_errors,
 )
 
 MODEL_DIR = Path(__file__).resolve().parents[1] / "data" / "modeldataset"
@@ -53,6 +53,20 @@ class ClusteringTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             prepare_cluster_data(self.df.drop(columns=["cluster_name"]))
 
+    def test_hover_includes_cluster_name_and_values(self):
+        data = prepare_cluster_data(self.df, 2025, ["India"], list(CLUSTER_ORDER))
+        fig = build_cluster_strip(data)
+        trace = fig.data[0]
+        self.assertIn("EV Adoption Cluster=%{x}", trace.hovertemplate)
+        self.assertIn("EV Stock Share (%)", trace.hovertemplate)
+        self.assertIn("Year", trace.hovertemplate)
+        self.assertEqual(trace.x[0], "Early EV Adoption")
+
+    def test_single_country_summary_follows_filter(self):
+        data = prepare_cluster_data(self.df, 2025, ["India"], list(CLUSTER_ORDER))
+        summary = summarize_clusters(data)
+        self.assertEqual(summary["Countries"].tolist(), [1])
+
 
 class RegressionTests(unittest.TestCase):
     @classmethod
@@ -89,6 +103,29 @@ class RegressionTests(unittest.TestCase):
     def test_missing_columns_raise(self):
         with self.assertRaises(ValueError):
             prepare_regression_errors(self.df.drop(columns=[ACTUAL_COLUMN]))
+
+    def test_single_model_single_country_summary(self):
+        data = prepare_regression_errors(self.df, ["XGBoost"], ["Norway"])
+        summary = summarize_errors(data)
+        self.assertEqual(list(summary.index), ["XGBoost"])
+        self.assertEqual(int(summary.loc["XGBoost", "Countries"]), 1)
+        self.assertEqual(summary.loc["XGBoost", "MAE (pp)"],
+                         summary.loc["XGBoost", "Median error (pp)"])
+
+    def test_predictions_are_unchanged_and_may_exceed_valid_range(self):
+        data = prepare_regression_errors(self.df, ["Linear Regression"], ["Norway"])
+        self.assertAlmostEqual(data["prediction"].iloc[0], 101.94, places=2)
+
+    def test_bootstrap_interval_is_reproducible_and_ordered(self):
+        low, high = bootstrap_mae_difference(self.df, "Linear Regression", "XGBoost")
+        again = bootstrap_mae_difference(self.df, "Linear Regression", "XGBoost")
+        self.assertEqual((low, high), again)
+        self.assertLess(low, high)
+        self.assertLessEqual(low, 0)       # ML models not clearly distinguishable
+        self.assertGreaterEqual(high, 0)
+        low_p, high_p = bootstrap_mae_difference(
+            self.df, "Linear Regression", "Persistence Baseline")
+        self.assertLess(high_p, 0)         # improvement over persistence is clear
 
 
 if __name__ == "__main__":

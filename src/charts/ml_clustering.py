@@ -75,7 +75,7 @@ def build_cluster_strip(data: pd.DataFrame) -> go.Figure | None:
             "year": True,
             "ev_sales_share": ":.2f",
             "ev_stock_share": ":.2f",
-            "cluster_name": False,
+            "cluster_name": True,
         },
         category_orders={"cluster_name": list(CLUSTER_ORDER)},
         color_discrete_map=CLUSTER_COLORS,

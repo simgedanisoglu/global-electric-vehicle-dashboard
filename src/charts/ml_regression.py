@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 
@@ -92,3 +93,20 @@ def build_error_boxplot(data: pd.DataFrame) -> go.Figure | None:
         template="plotly_white", height=520, showlegend=False,
     )
     return fig
+
+
+def bootstrap_mae_difference(
+    results: pd.DataFrame, model_a: str, model_b: str,
+    n_boot: int = 10_000, seed: int = 0,
+) -> tuple[float, float]:
+    """95% bootstrap interval (percentage points) for MAE(model_a) - MAE(model_b),
+    resampling countries with replacement. Negative values favour model_a."""
+    errors = {
+        m: (results[ACTUAL_COLUMN] - results[m]).abs().to_numpy(dtype=float)
+        for m in (model_a, model_b)
+    }
+    count = len(results)
+    index = np.random.default_rng(seed).integers(0, count, (n_boot, count))
+    difference = (errors[model_a][index] - errors[model_b][index]).mean(axis=1)
+    low, high = np.percentile(difference, [2.5, 97.5])
+    return float(low), float(high)
