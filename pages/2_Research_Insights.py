@@ -141,7 +141,7 @@ with tabs[1]:
                     if np.isfinite(rho) else
                     "Rank correlation is undefined because one of the matched metrics is constant."
                 )
-            card_plot(fig, key="charging_splom_chart")
+            card_plot(fig, key="charging_splom_chart", selectable=True)
         card_result(
             fig, key="charging_splom_chart", insight=insight,
             scope=f"Historical · 2025 · {len(prepared)} complete countries · Cars/EV · Stock and public charging points",

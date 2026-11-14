@@ -223,8 +223,11 @@ def card_header(title, question):
         st.write(question)
 
 
-def card_plot(fig, *, key):
-    """Keep the original figure and tools inside the dedicated graph card."""
+def card_plot(fig, *, key, selectable=False):
+    """Keep the original figure and tools inside the dedicated graph card.
+
+    selectable=True opts a chart into Streamlit's selection tools (Box/Lasso Select).
+    """
     if fig is None:
         st.info("No comparable data is available for this selection.")
     else:
@@ -237,10 +240,16 @@ def card_plot(fig, *, key):
             ))
         # Streamlit provides the native fullscreen toolbar, including Parcoords.
         # No Cartesian zoom buttons are injected into non-Cartesian charts.
-        st.plotly_chart(
-            presentation, width="stretch", key=key, theme=None,
+        options = dict(
+            width="stretch", key=key, theme=None,
             config={"displayModeBar": True, "responsive": True},
         )
+        # Streamlit removes Box/Lasso Select unless selection events are enabled.
+        # Only charts that opt in get them; the figure's own dragmode, click mode
+        # and selected/unselected styling are left as the chart builder set them.
+        if selectable:
+            options.update(on_select="rerun", selection_mode=("points", "box", "lasso"))
+        st.plotly_chart(presentation, **options)
 
 
 def themed_figure(fig):
