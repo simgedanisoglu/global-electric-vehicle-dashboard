@@ -280,7 +280,7 @@ The **K-Means clustering, regression analysis, and ML Insights page** were devel
 
 ### 5. Report Writing
 
-The contributor(s) responsible for the final one-page English project report should be confirmed by the team and acknowledged here before submission.
+The one-page English project results report was prepared by Simge Danışoğlu. The report summarizes the project objectives, visualization techniques, key findings, machine learning results, data preprocessing, and individual team contributions.
 
 ## Limitations
 
