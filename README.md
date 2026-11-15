@@ -246,39 +246,25 @@ On the current `main` branch, **63 passing tests** and **43 sub-tests** were rep
 
 ## Team Members and Individual Contributions
 
-The project was developed through collaborative planning and evaluation by three team members. Dataset exploration, data-cleaning decisions, research question formulation, and visualization technique selection were carried out collaboratively. During the development phase, responsibility for the nine core visualizations was distributed equally among the team members.
+**Data preparation and analytical design were carried out collaboratively.** The source data were examined by all three team members, and missing records, unusual values, and data-quality issues were reviewed jointly. **Decisions on cleaning rules, outlier interpretation, and construction of the main analysis dataset were made together.** Research questions and visualization methods were also selected collaboratively. Responsibility for the nine core visualizations was then distributed across the team, with **three visualizations developed and tested by each member**. Individual contributions are documented below.
 
-### 1. Data Preprocessing
+### Simge (`simgedanisoglu`)
 
-The raw dataset was jointly examined by all team members. Missing values, duplicate records, invalid measurements, and statistical outliers were evaluated, and data-cleaning decisions were made collaboratively.
+- **Core visualizations:** **Connected Scatterplot, Treemap, and Diverging Heatmap** were developed, along with the corresponding chart tests.
+- **Dashboard and UI:** The card-based Streamlit layout, shared Light/Dark theme controls, and signed-log heatmap color mapping were developed.
+- **Project foundation:** The GitHub repository, Streamlit application, and folder structure were established; source, analysis, and model data files were organized; and the initial project README was prepared.
 
-### 2. Visualization Design
+### Halil Keremoglu (`halilkrm`)
 
-Research questions, visualization techniques, and key metrics were jointly determined by **Simge, Halil, and Rabia**. The visualizations were designed to explore different aspects of the dataset and incorporate a variety of visualization techniques.
+- **Core visualizations:** **Sunburst, Rank Comparison Dumbbell, and Sankey Diagram** were developed, with associated tests.
+- **Dashboard integration:** Charts were integrated into the Dataset Explorer and Research & Insights pages; consistent styling was applied, Sankey tooltips were improved, and Light/Dark toggle alignment was corrected.
 
-Following these collaborative design decisions, each team member was assigned responsibility for the technical design and implementation of three visualizations.
+### Rabia Avcı (`rabiaavc`)
 
-### 3. Interaction Implementation
+- **Core visualizations:** **Scatterplot Matrix (SPLOM), Violin Plot, and Parallel Coordinates Plot** were developed, along with the associated tests. Linked box/lasso selection was implemented for SPLOM, and the Violin distribution display was improved.
+- **Machine learning:** **K-Means clustering** and **next-year regression** analyses were conducted. The ML Insights page, strip/box plots, filters, summary tables, bootstrap comparisons, and related tests were developed.
+- **Data preparation and quality:** The **exploratory analysis, cleaning, and IQR outlier-detection notebook** (`data/DataVisulationProject.ipynb`) was implemented and documented based on decisions made collaboratively by the team.
 
-- **Simge:** Interactive features were implemented for the Connected Scatterplot, Treemap, and Diverging Heatmap, including metric selection, hover tooltips, and chart navigation.
-- **Halil:** Interactive features were implemented for the Sunburst, Rank Comparison Dumbbell, and Sankey Diagram, including hierarchical drill-down, year selection, hover tooltips, and draggable Sankey nodes.
-- **Rabia:** Interactive features were implemented for the Scatterplot Matrix (SPLOM), Violin Plot, and Parallel Coordinates Plot, including linked box/lasso selection, segment filtering, axis brushing, and hover tooltips.
-
-### 4. Individual Visualization Development
-
-| Team Member | Developed Visualizations |
-|---|---|
-| **Simge** (`simgedanisoglu`) | Connected Scatterplot, Treemap, Diverging Heatmap |
-| **Halil Keremoğlu** (`halilkrm`) | Sunburst, Rank Comparison Dumbbell, Sankey Diagram |
-| **Rabia Avcı** (`rabiaavc`) | Scatterplot Matrix (SPLOM), Violin Plot, Parallel Coordinates Plot |
-
-The data preparation, visualization implementation, and associated testing required for each chart were carried out by the responsible team member.
-
-Additionally, contributions to the Streamlit dashboard interface, page integration, and theme customization were made by **Simge and Halil**. The dashboard was deployed to Streamlit Community Cloud by Halil, making the application publicly accessible. The **K-Means clustering, regression analysis, and ML Insights page** were developed by **Rabia**.
-
-### 5. Report Writing
-
-*This section will be completed once the team member(s) responsible for preparing the one-page English report have been confirmed.*
 ## Limitations
 
 - **Coverage:** Country coverage differs by indicator and year. Price and charging data are available for fewer countries than sales data, and incomplete records are excluded rather than imputed.
