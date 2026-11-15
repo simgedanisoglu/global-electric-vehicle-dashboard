@@ -274,7 +274,7 @@ Following these collaborative design decisions, each team member was assigned re
 
 The data preparation, visualization implementation, and associated testing required for each chart were carried out by the responsible team member.
 
-Additionally, contributions to the Streamlit dashboard interface, page integration, and theme customization were made by **Simge and Halil**. The dashboard was deployed to **Streamlit Community Cloud by Halil**, making the application publicly accessible.
+**Halil** developed the Streamlit dashboard interface, integrated the visualization charts into the application pages, and deployed the dashboard to **Streamlit Community Cloud**, making it publicly accessible. **Simge** contributed to theme customization, reviewed and tested the visualizations, and added the Methodology & Limitations sections.
 
 The **K-Means clustering, regression analysis, and ML Insights page** were developed by **Rabia**. The clustering strip plot, regression error box plot, filters, summary tables, and bootstrap comparisons were also implemented and tested by Rabia.
 
